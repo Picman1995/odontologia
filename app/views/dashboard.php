@@ -19,12 +19,12 @@ $totalAgendamentos = $agendamentoModel->total();
 
 <div class="container mt-5 text-center">
     <img src="<?= BASE_URL ?>/images/logo.jpg" alt="Logo Sistema Odontológico" class="img-fluid mb-4" style="max-height: 100px;">
-    <h2 class="mb-4">Bem-vindo, <?=  $_SESSION[SESSION_NAME]['name'] ?? 'Usuário' ?>!</h2>
+    <h2 class="mb-4">Bienvenido, <?=  $_SESSION[SESSION_NAME]['name'] ?? 'Usuário' ?>!</h2>
 
     <!-- Container escuro com informações do usuário -->
     <div class="container mt-4">
         <div class="card bg-dark text-white shadow-sm px-4 py-3">
-            <h4 class="text-center mb-4"><i class="bi bi-person-circle me-2"></i>Informações do Usuário</h4>
+            <h4 class="text-center mb-4"><i class="bi bi-person-circle me-2"></i>Informaciones de usuarios</h4>
 
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -43,23 +43,23 @@ $totalAgendamentos = $agendamentoModel->total();
       
             <br>
 
-            <h4 class="text-center mb-3"><i class="bi bi-hospital-fill me-2"></i>Informações da Clínica</h4>
+            <h4 class="text-center mb-3"><i class="bi bi-hospital-fill me-2"></i>Informaciones de la Clinica</h4>
 
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="d-flex align-items-center mb-2">
                     <i class="bi bi-hospital-fill me-2"></i>
-                    <strong class="me-2">Nome:</strong> 
+                    <strong class="me-2">Nombre:</strong> 
                     <span><?= htmlspecialchars(NOME_CLINICA) ?></span>
                 </div>
                 <div class="d-flex align-items-center mb-2">
                     <i class="bi bi-geo-alt-fill me-2"></i>
-                    <strong class="me-2">Endereço:</strong> 
+                    <strong class="me-2">Direccion:</strong> 
                     <span><?= htmlspecialchars(ENDERECO_CLINICA) ?></span>
                 </div>
                 <div class="d-flex align-items-center mb-2">
                     <i class="bi bi-buildings me-2"></i>
-                    <strong class="me-2">Cidade:</strong> 
+                    <strong class="me-2">Ciudad:</strong> 
                     <span><?= htmlspecialchars(CIDADE_CLINICA) ?></span>
                 </div>
                 <div class="d-flex align-items-center mb-2">

@@ -191,10 +191,10 @@ window.addEventListener('load', function () {
             </ul>
         </li>
 
-        <!-- Menu Financeiro -->
+        <!-- Menu Financiero -->
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="financeiroDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Financeiro
+            Financiero
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="financeiroDropdown">
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/movimientos">Todos los movimientos</a></li>

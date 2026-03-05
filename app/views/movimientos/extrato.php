@@ -1,11 +1,11 @@
 <?php
-$pageTitle = "Extrato Financeiro - Sistema Odontológico";
+$pageTitle = "Estracto Financiero - Sistema Odontológico";
 require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <div class="container my-5">
     <div class="card bg-dark text-light p-4 rounded-4 shadow">
-        <h2 class="mb-4 text-center">Extrato Financeiro</h2>
+        <h2 class="mb-4 text-center">Estracto Financiero</h2>
         <form method="GET" action="<?= BASE_URL ?>/lancamentos/extrato/<?= $pacienteId ?>" class="row g-3 mb-4">
             <input type="hidden" name="paciente_id" value="<?= $pacienteId ?>">
             <div class="col-md-5">

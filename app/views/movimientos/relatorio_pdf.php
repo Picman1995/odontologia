@@ -130,7 +130,7 @@
         <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?>, <?= htmlspecialchars($paciente['cidade']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, CEP: <?= htmlspecialchars($paciente['cep']) ?></p>
         <p><strong>Cadastrado em:</strong> <?= date('d/m/Y H:i', strtotime($paciente['created_at'])) ?></p>
 
-        <h5>Lançamentos Financeiros</h5>
+        <h5>Comunicados financieros</h5>
         <table>
             <thead>
                 <tr>
