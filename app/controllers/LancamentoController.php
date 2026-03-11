@@ -94,7 +94,7 @@ class LancamentoController {
                 ];
                 $this->model->update($id, $data);
     
-                // Redireciona para a lista de lançamentos
+                // Redireciona para a lista de Lanzamientos
                 header('Location: ' . BASE_URL . '/movimientos');
                 exit;
             }
@@ -148,7 +148,7 @@ class LancamentoController {
     }
     
     public function gerarRelatorioPDF(int $pacienteId): void {
-        // Buscar dados do paciente e seus lançamentos
+        // Buscar dados do paciente e seus Lanzamientos
         $paciente = $this->pacienteModel->find($pacienteId);
         $lanzamientos = $this->model->getByPaciente($pacienteId);
         $saldo = $this->model->getSaldoPaciente($pacienteId);

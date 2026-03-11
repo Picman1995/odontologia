@@ -28,7 +28,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>CEP</th>
                     <th>Ciudad</th>
                     <th>Estado</th>
-                    <th>Ações</th>
+                    <th>acciones</th>
                 </tr>
             </thead>
             <tbody>

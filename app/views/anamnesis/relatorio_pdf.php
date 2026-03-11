@@ -97,7 +97,7 @@
         <h1>Ficha de Anamnese Odontológica</h1>
         <h6><?= $numeroAnamnese ?></h6>
 
-        <h5>Informações do Paciente</h5>
+        <h5>Informacciones do Paciente</h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>Data de Nascimento:</strong> <?= htmlspecialchars(date("d/m/Y", strtotime($paciente['data_nascimento']))) ?></p>
         <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
@@ -109,14 +109,14 @@
         <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
 
-        <h5>Informações do Dentista</h5>
+        <h5>Informacciones do Dentista</h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?></p>
         <p><strong>Especialidade:</strong> <?= htmlspecialchars($especialidade) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
         <p><strong>CRO:</strong> <?= htmlspecialchars($dentista['cro']) ?></p>
 
-        <h5>Informações da Anamnese</h5>
+        <h5>Informacciones da Anamnese</h5>
         <p><?= nl2br(htmlspecialchars($anamnese['descricao'])) ?></p>
 
         <h5><strong>Data:</strong> <?= htmlspecialchars(date("d/m/Y", strtotime($anamnese['data']))) ?></h5>

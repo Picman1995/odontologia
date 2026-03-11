@@ -83,7 +83,7 @@ class Anamnese {
             return false;
         }
     
-        // 2. Buscar informações completas do paciente
+        // 2. Buscar informacciones completas do paciente
         $stmtPac = $this->conn->prepare("SELECT * FROM pacientes WHERE id_paciente = :paciente_id");
         $stmtPac->execute([':paciente_id' => $anamnese['paciente_id']]);
         return $stmtPac->fetch();
@@ -99,7 +99,7 @@ class Anamnese {
             return false;
         }
     
-        // 2. Buscar informações completas do dentista
+        // 2. Buscar informacciones completas do dentista
         $stmtDent = $this->conn->prepare("SELECT * FROM dentistas WHERE id_dentista = :dentista_id");
         $stmtDent->execute([':dentista_id' => $anamnese['dentista_id']]);
         return $stmtDent->fetch();

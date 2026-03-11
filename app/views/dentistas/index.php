@@ -29,7 +29,7 @@ $dentistaModel = new Dentista();
                     <th>RG</th>
                     <th>CPF</th>
                     <th>CRO</th>
-                    <th>Ações</th>
+                    <th>acciones</th>
                 </tr>
             </thead>
             <tbody>

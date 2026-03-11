@@ -88,7 +88,7 @@
     <main>
         <h1>Orçamento</h1>
 
-        <h5>Informações do Paciente | <?= htmlspecialchars($numeroOrcamento) ?></h5>
+        <h5>Informacciones do Paciente | <?= htmlspecialchars($numeroOrcamento) ?></h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>Data de Nascimento:</strong> <?= date("d/m/Y", strtotime($paciente['data_nascimento'])) ?></p>
         <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
@@ -100,14 +100,14 @@
         <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
 
-        <h5>Informações do Dentista</h5>
+        <h5>Informacciones do Dentista</h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?></p>
         <p><strong>Especialidade:</strong> <?= htmlspecialchars($especialidade) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
         <p><strong>CRO:</strong> <?= htmlspecialchars($dentista['cro']) ?></p>
 
-        <h5>Informações do Orçamento</h5>
+        <h5>Informacciones do Orçamento</h5>
         <p><strong>Serviço:</strong><br><?= nl2br(htmlspecialchars($orcamento['descricao_servico'])) ?></p>
         <p><strong>Valor:</strong> R$ <?= number_format($orcamento['valor'], 2, ',', '.') ?></p>
         <h5><strong>Data:</strong> <?= date("d/m/Y", strtotime($orcamento['data'])) ?></h5>

@@ -1,12 +1,12 @@
 <?php
-$pageTitle = "Lançamentos Financeiros - Sistema Odontológico";
+$pageTitle = "Lanzamientos Financeiros - Sistema Odontológico";
 require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Comunicados financieros</h1>
-        <a href="<?= BASE_URL ?>/lanzamientos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">+ Novo Lançamento</a>
+        <a href="<?= BASE_URL ?>/lanzamientos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">+ Nuevo Lanzamiento</a>
     </div>
 
     <div class="table-responsive bg-dark p-3 rounded shadow-sm">
@@ -21,7 +21,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>Categoria</th>
                     <th>Valor (Gs)</th>
                     <th>Descripcion</th>
-                    <th>Ações</th>
+                    <th>acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,7 +48,7 @@ require_once __DIR__ . '/../layouts/header.php';
                             <a href="<?= BASE_URL ?>/lanzamientos/edit/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/lanzamientos/delete/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este lançamento?')">
+                            <a href="<?= BASE_URL ?>/lanzamientos/delete/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este Lanzamiento?')">
                                 <i class="bi bi-trash3"></i>
                             </a>
                             <a href="<?= BASE_URL ?>/lanzamientos/relatorio/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-secondary" title="Relatório">

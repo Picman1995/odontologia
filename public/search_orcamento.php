@@ -18,10 +18,10 @@ if (isset($_GET['query'])) {
     
     if ($result) {
         foreach ($result as $row) {
-            // Para cada paciente encontrado, buscar todas as informações relacionadas
+            // Para cada paciente encontrado, buscar todas as informacciones relacionadas
             $id_paciente = $row['id_paciente'];
             
-            // Consulta para obter todas as informações do paciente com base no id_paciente
+            // Consulta para obter todas as informacciones do paciente com base no id_paciente
             $stmtPaciente = $conn->prepare("SELECT * FROM pacientes WHERE id_paciente = :id_paciente");
             $stmtPaciente->execute([':id_paciente' => $id_paciente]);
             $paciente = $stmtPaciente->fetch(PDO::FETCH_ASSOC);

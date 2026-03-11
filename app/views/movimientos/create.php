@@ -1,5 +1,5 @@
 <?php 
-$pageTitle = "Novo Lançamento - Sistema Odontológico";
+$pageTitle = "Nuevo Lanzamiento - Sistema Odontológico";
 require_once __DIR__ . '/../layouts/header.php';
 $orcamentoModel = new Orcamento();
 ?>

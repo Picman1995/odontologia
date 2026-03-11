@@ -16,7 +16,7 @@ $dentistaName = $dentistaModel->getAll();
             </div>
         <?php endif; ?>
 
-        <h1 class="text-center mt-4">Cadastrar Novo Orçamento</h1>
+        <h1 class="text-center mt-4">Cadastrar Nuevo Orçamento</h1>
 
         <div class="form-container">
             <form action="<?= BASE_URL ?>/orcamentos/store" method="POST">

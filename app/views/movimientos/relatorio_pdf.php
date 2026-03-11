@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Relatório de Lançamentos</title>
+    <title>Relatório de Lanzamientos</title>
     <style>
         * {
             box-sizing: border-box;
@@ -117,9 +117,9 @@
     </header>
 
     <main>
-        <h1>Relatório de Lançamentos</h1>
+        <h1>Relatório de Lanzamientos</h1>
 
-        <h5>Informações do Paciente</h5>
+        <h5>Informacciones do Paciente</h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
         <p><strong>RG:</strong> <?= htmlspecialchars($paciente['rg']) ?></p>

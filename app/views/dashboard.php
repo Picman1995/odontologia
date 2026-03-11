@@ -21,7 +21,7 @@ $totalAgendamentos = $agendamentoModel->total();
     <img src="<?= BASE_URL ?>/images/logo.jpg" alt="Logo Sistema Odontológico" class="img-fluid mb-4" style="max-height: 100px;">
     <h2 class="mb-4">Bienvenido, <?=  $_SESSION[SESSION_NAME]['name'] ?? 'Usuário' ?>!</h2>
 
-    <!-- Container escuro com informações do usuário -->
+    <!-- Container escuro com informacciones do usuário -->
     <div class="container mt-4">
         <div class="card bg-dark text-white shadow-sm px-4 py-3">
             <h4 class="text-center mb-4"><i class="bi bi-person-circle me-2"></i>Informaciones de usuarios</h4>

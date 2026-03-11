@@ -4,7 +4,7 @@ require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <div class="container">
-    <h1 class="text-center mt-4">Cadastrar Novo Funcionário</h1>
+    <h1 class="text-center mt-4">Cadastrar Nuevo Funcionário</h1>
 
     <div class="form-container">
         <form action="<?= BASE_URL ?>/funcionarios/store" method="POST">

@@ -1,5 +1,5 @@
 <?php 
-$pageTitle = "Novo Lançamento - Sistema Odontológico";
+$pageTitle = "Nuevo Lanzamiento - Sistema Odontológico";
 require_once __DIR__ . '/../layouts/header.php';
 $orcamentoModel = new Orcamento();
 $orcamentos = $orcamentoModel->getAll();
@@ -14,7 +14,7 @@ $pacientes = $pacienteModel->getAll();
         </div>
     <?php endif; ?>
 
-    <h1 class="text-center mt-4">Editar Pagamento / Lançamento</h1>
+    <h1 class="text-center mt-4">Editar Pagamento / Lanzamiento</h1>
 
     <div class="form-container">
         <form method="POST" action="<?= BASE_URL ?>/lanzamientos/update/<?= $lancamento['id_movimiento'] ?>">
@@ -78,7 +78,7 @@ $pacientes = $pacienteModel->getAll();
                 <textarea name="descripcion" id="descripcion" class="form-control" rows="3"><?= htmlspecialchars($lancamento['descripcion']) ?></textarea>
             </div>
 
-            <button type="submit" class="btn btn-custom w-100">Atualizar Lançamento</button>
+            <button type="submit" class="btn btn-custom w-100">Atualizar Lanzamiento</button>
         </form>
 
         <div class="text-center mt-3">

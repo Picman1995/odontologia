@@ -6,7 +6,7 @@ require_once __DIR__ . '/../layouts/header.php';
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>Receitas Odontológicas</h2>
-        <a href="<?= BASE_URL ?>/receitas/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Cadastrar Nova Receita</a>
+        <a href="<?= BASE_URL ?>/receitas/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Registrar Nueva Receta</a>
     </div>
 
     <div class="table-responsive bg-dark p-3 rounded shadow-sm">
@@ -17,7 +17,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>Paciente</th>
                     <th>Dentista</th>
                     <th>Data</th>
-                    <th>Ações</th>
+                    <th>acciones</th>
                 </tr>
             </thead>
             <tbody>

@@ -12,7 +12,7 @@ require_once __DIR__ . '/../layouts/header.php';
 
     <div class="form-container mt-4 p-4 rounded shadow-sm bg-dark text-light">
 
-        <h5 class="border-bottom pb-2 mb-3">Informações do Paciente - <?= $numeroAnamnese ?></h5>
+        <h5 class="border-bottom pb-2 mb-3">Informacciones do Paciente - <?= $numeroAnamnese ?></h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>Data de Nascimento:</strong> <?= htmlspecialchars(date("d/m/Y", strtotime($paciente['data_nascimento']))) ?></p>
         <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
@@ -24,14 +24,14 @@ require_once __DIR__ . '/../layouts/header.php';
         <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
 
-        <h5 class="border-bottom pb-2 mb-3 mt-4">Informações do Dentista</h5>
+        <h5 class="border-bottom pb-2 mb-3 mt-4">Informacciones do Dentista</h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?></p>
         <p><strong>Especialidade:</strong> <?= htmlspecialchars($especialidade) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
         <p><strong>CRO:</strong> <?= htmlspecialchars($dentista['cro']) ?></p>
 
-        <h5 class="border-bottom pb-2 mb-3 mt-4">Informações da Anamnese</h5>
+        <h5 class="border-bottom pb-2 mb-3 mt-4">Informacciones da Anamnese</h5>
         <p><?=  nl2br(htmlspecialchars($anamnese['descricao'])) ?></p>
         <h5 class="border-bottom pb-2 mb-3 mt-4"><strong>Data:</strong> <?= htmlspecialchars(date("d/m/Y", strtotime($anamnese['data']))) ?></h5>
 

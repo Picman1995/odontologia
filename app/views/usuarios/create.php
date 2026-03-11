@@ -1,5 +1,5 @@
 <?php 
-$pageTitle = "Criar Novo Usuário - Sistema Odontológico";
+$pageTitle = "Criar Nuevo Usuário - Sistema Odontológico";
 require_once __DIR__ . '/../layouts/header.php'; 
 
 if (session_status() === PHP_SESSION_NONE) session_start();

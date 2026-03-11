@@ -8,7 +8,7 @@ $dentistaModel = new Dentista();
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Anamneses</h1>
             <div class="d-flex gap-2">
-                <a href="<?= BASE_URL ?>/anamneses/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Cadastra Nova Anamnese</a>
+                <a href="<?= BASE_URL ?>/anamneses/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Registrar Nuevo Historial Médico</a>
             </div>
         </div>
     
@@ -21,7 +21,7 @@ $dentistaModel = new Dentista();
                 <th>Dentista</th>
                 <th>Descripcion</th>
                 <th>Data</th>
-                <th>Ações</th>
+                <th>acciones</th>
             </tr>
         </thead>
         <tbody>

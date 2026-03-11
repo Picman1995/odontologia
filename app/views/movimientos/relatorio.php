@@ -1,13 +1,13 @@
 <?php
-$pageTitle = "Relatório de Lançamentos";
+$pageTitle = "Relatório de Lanzamientos";
 require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <div class="container my-5">
     <div class="card bg-dark text-light p-4 rounded-4 shadow">
-        <h2 class="text-center mb-4">Relatório de Lançamentos</h2>
+        <h2 class="text-center mb-4">Relatório de Lanzamientos</h2>
 
-        <!-- Informações do Paciente -->
+        <!-- Informacciones do Paciente -->
         <div class="mb-4">
             <h5 class="mb-3">Dados do Paciente</h5>
             <div class="row">
@@ -50,7 +50,7 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
         </div>
 
-        <!-- Tabela de Lançamentos -->
+        <!-- Tabela de Lanzamientos -->
         <div class="table-responsive">
             <table class="table table-dark table-striped table-hover text-center align-middle">
                 <thead>

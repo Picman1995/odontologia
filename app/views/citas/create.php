@@ -1,6 +1,6 @@
 <?php 
 require_once __DIR__ . '/../../../public/auth_middleware.php';
-$pageTitle = "Novo Agendamento - Sistema Odontológico";
+$pageTitle = "Nuevo Agendamiento - Sistema Odontológico";
 require_once __DIR__ . '/../layouts/header.php';
 $pacienteModel = new Paciente();
 $pacienteName = $pacienteModel->getAll();
@@ -8,7 +8,7 @@ $dentistaModel = new Dentista();
 $dentistaName = $dentistaModel->getAll();
 ?>
     <div class="container">
-        <h1 class="text-center mt-4">Novo Agendamento</h1>
+        <h1 class="text-center mt-4">Nuevo Agendamiento</h1>
 
         <div class="form-container">
             <form action="<?= BASE_URL ?>/agendamentos/store" method="POST">
