@@ -37,7 +37,7 @@ require_once __DIR__ . '/../layouts/header.php';
                         <td><?= htmlspecialchars($funcionario['id_funcionario']) ?></td>
                         <td><?= htmlspecialchars($funcionario['nome']) ?></td>
                         <td><?= htmlspecialchars($funcionario['cargo']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['telefone']) ?></td>
+                        <td><?= htmlspecialchars($funcionario['telefono']) ?></td>
                         <td><?= htmlspecialchars($funcionario['email']) ?></td>
                         <td><?= htmlspecialchars($funcionario['cpf']) ?></td>
                         <td><?= htmlspecialchars($funcionario['rg']) ?></td>

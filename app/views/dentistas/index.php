@@ -43,7 +43,7 @@ $dentistaModel = new Dentista();
                                 echo $nomeEspecialidade;
                             ?>
                         </td>
-                        <td><?= htmlspecialchars($dentista['telefone']) ?></td>
+                        <td><?= htmlspecialchars($dentista['telefono']) ?></td>
                         <td><?= htmlspecialchars($dentista['email']) ?></td>
                         <td><?= htmlspecialchars($dentista['endereco']) ?></td>
                         <td><?= htmlspecialchars($dentista['cidade']) ?></td>

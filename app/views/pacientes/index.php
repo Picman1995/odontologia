@@ -39,7 +39,7 @@ require_once __DIR__ . '/../layouts/header.php';
                         <td><?= htmlspecialchars(date("d/m/Y", strtotime($paciente['fecha_nacimiento']))) ?></td>
                         <td><?= htmlspecialchars($paciente['direccion']) ?></td>
                         <td><?= htmlspecialchars($paciente['cep']) ?></td>
-                        <td><?= htmlspecialchars($paciente['telefone']) ?></td>
+                        <td><?= htmlspecialchars($paciente['telefono']) ?></td>
                         <td><?= htmlspecialchars($paciente['email']) ?></td>
                         <td><?= htmlspecialchars($paciente['cpf']) ?></td>
                         <td><?= htmlspecialchars($paciente['rg']) ?></td>

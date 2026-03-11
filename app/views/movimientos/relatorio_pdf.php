@@ -126,7 +126,7 @@
         <p><strong>Data de Nascimento:</strong> <?= date('d/m/Y', strtotime($paciente['data_nascimento'])) ?></p>
         <p><strong>Sexo:</strong> <?= htmlspecialchars($paciente['sexo']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
-        <p><strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefone']) ?></p>
+        <p><strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
         <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?>, <?= htmlspecialchars($paciente['cidade']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, CEP: <?= htmlspecialchars($paciente['cep']) ?></p>
         <p><strong>Cadastrado em:</strong> <?= date('d/m/Y H:i', strtotime($paciente['created_at'])) ?></p>
 

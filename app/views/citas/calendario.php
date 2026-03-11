@@ -82,7 +82,7 @@ $agendamentoModel = new Agendamento();
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('pacienteNome').textContent = data.paciente ?? 'N/A';
-                    document.getElementById('pacienteTelefone').textContent = data.telefone ?? 'N/A';
+                    document.getElementById('pacienteTelefone').textContent = data.telefono ?? 'N/A';
                     document.getElementById('pacienteEmail').textContent = data.email ?? 'N/A';
 
                     document.getElementById('pacienteDentista').textContent = data.dentista ?? 'N/A';

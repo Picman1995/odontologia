@@ -30,7 +30,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefone']) ?>
+                    <strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefono']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
                     <strong>CEP:</strong> <?= htmlspecialchars($paciente['cep']) ?>

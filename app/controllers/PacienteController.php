@@ -54,7 +54,7 @@ class PacienteController {
                 'nombre' => $_POST['nombre'] ?? '',
                 'fecha_nacimiento' => $_POST['fecha_nacimiento'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
-                'telefono' => $_POST['telefone'] ?? '',
+                'telefono' => $_POST['telefono'] ?? '',
                 'email' => $_POST['email'] ?? '',
                 'cep' => $_POST['cep'] ?? '',
                 'cpf' => $_POST['cpf'] ?? '',

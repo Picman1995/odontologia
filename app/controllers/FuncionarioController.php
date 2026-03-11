@@ -53,7 +53,7 @@ class FuncionarioController {
             $data = [
                 'nombre' => $_POST['nombre'] ?? '',
                 'puesto' => $_POST['puesto'] ?? '',
-                'telefono' => $_POST['telefone'] ?? '',
+                'telefono' => $_POST['telefono'] ?? '',
                 'email' => $_POST['email'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
                 'cep' => $_POST['cep'] ?? '',

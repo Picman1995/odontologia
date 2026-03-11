@@ -17,7 +17,7 @@ require_once __DIR__ . '/../layouts/header.php';
         <p><strong>Endereço:</strong> <?= htmlspecialchars($dentista['endereco']) ?></p>
         <p><strong>Cidade:</strong> <?= htmlspecialchars($dentista['cidade']) ?></p>
         <p><strong>Estado:</strong> <?= htmlspecialchars($dentista['estado']) ?></p>
-        <p><strong>Telefone:</strong> <?= htmlspecialchars($dentista['telefone']) ?></p>
+        <p><strong>Telefone:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
 
         <h5 class="border-bottom pb-2 mb-3 mt-4">Cidadão</h5>

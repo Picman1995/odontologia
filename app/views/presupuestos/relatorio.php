@@ -21,13 +21,13 @@ require_once __DIR__ . '/../layouts/header.php';
         <p><strong>Cidade:</strong> <?= htmlspecialchars($paciente['cidade']) ?></p>
         <p><strong>Estado:</strong> <?= htmlspecialchars($paciente['estado']) ?></p>
         <p><strong>CEP:</strong> <?= htmlspecialchars($paciente['cep']) ?></p>
-        <p><strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefone']) ?></p>
+        <p><strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
 
         <h5 class="border-bottom pb-2 mb-3 mt-4">Informações do Dentista</h5>
         <p><strong>Nome:</strong> <?= htmlspecialchars($dentista['nome']) ?></p>
         <p><strong>Especialidade:</strong> <?= htmlspecialchars($especialidade) ?></p>
-        <p><strong>Telefone:</strong> <?= htmlspecialchars($dentista['telefone']) ?></p>
+        <p><strong>Telefone:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
         <p><strong>CRO:</strong> <?= htmlspecialchars($dentista['cro']) ?></p>
 

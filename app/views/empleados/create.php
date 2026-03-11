@@ -19,8 +19,8 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
 
             <div class="mb-3">
-                <label for="telefone" class="form-label">Telefone:</label>
-                <input type="text" class="form-control" name="telefone" id="telefone" required>
+                <label for="telefono" class="form-label">Telefone:</label>
+                <input type="text" class="form-control" name="telefono" id="telefono" required>
             </div>
 
             <div class="mb-3">

@@ -23,7 +23,7 @@ class DentistaController {
             $data = [
                 'nombre' => $_POST['nombre'] ?? '',
                 'especialidad_id' => $_POST['especialidad_id'] ?? '',
-                'telefone' => $_POST['telefone'] ?? '',
+                'telefono' => $_POST['telefono'] ?? '',
                 'email' => $_POST['email'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
@@ -53,7 +53,7 @@ class DentistaController {
             $data = [
                 'nombre' => $_POST['nombre'] ?? '',
                 'especialidad_id' => $_POST['especialidad_id'] ?? '',
-                'telefone' => $_POST['telefone'] ?? '',
+                'telefono' => $_POST['telefono'] ?? '',
                 'email' => $_POST['email'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
