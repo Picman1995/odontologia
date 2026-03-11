@@ -6,7 +6,7 @@ require_once __DIR__ . '/../layouts/header.php';
 <div class="container my-5">
     <div class="card bg-dark text-light p-4 rounded-4 shadow">
         <h2 class="mb-4 text-center">Estracto Financiero</h2>
-        <form method="GET" action="<?= BASE_URL ?>/lancamentos/extrato/<?= $pacienteId ?>" class="row g-3 mb-4">
+        <form method="GET" action="<?= BASE_URL ?>/lanzamientos/extrato/<?= $pacienteId ?>" class="row g-3 mb-4">
             <input type="hidden" name="paciente_id" value="<?= $pacienteId ?>">
             <div class="col-md-5">
                 <label class="form-label">Data Início:</label>
@@ -39,8 +39,8 @@ require_once __DIR__ . '/../layouts/header.php';
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($lancamentos)): ?>
-                    <?php foreach ($lancamentos as $lanc): ?>
+                <?php if (!empty($lanzamientos)): ?>
+                    <?php foreach ($lanzamientos as $lanc): ?>
                         <tr>
                             <td><?= $lanc['id_lancamento'] ?></td>
                             <td><?= date('d/m/Y', strtotime($lanc['data_lancamento'])) ?></td>
@@ -56,7 +56,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="6">Nenhum lançamento encontrado para este paciente.</td>
+                        <td colspan="6">No se encontraron registros para este paciente.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
@@ -72,7 +72,7 @@ require_once __DIR__ . '/../layouts/header.php';
         </div>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light">Regresar a movimientos</a>
+            <a href="<?= BASE_URL ?>/lanzamientos" class="btn btn-outline-light">Regresar a movimientos</a>
         </div>
     </div>
 </div>

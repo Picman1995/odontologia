@@ -105,7 +105,7 @@ elseif ($uri == '/empleados') {
     $funcionarioController->delete($matches[1]);
 }
 
-// Especialidades
+// Especialidade
 elseif ($uri == '/especialidades') {
     $especialidadeController->index();
 } elseif ($uri == '/especialidades/create') {

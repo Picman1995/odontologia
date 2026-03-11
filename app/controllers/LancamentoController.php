@@ -21,7 +21,7 @@ class LancamentoController {
     }
 
     public function index(): void {
-        $lancamentos = $this->model->getAll();
+        $lanzamientos = $this->model->getAll();
         include __DIR__ . '/../views/movimientos/index.php';
     }
 
@@ -119,7 +119,7 @@ class LancamentoController {
         $dataInicio = $_GET['data_inicio'] ?? null;
         $dataFim = $_GET['data_fim'] ?? null;
     
-        $lancamentos = $this->model->getByPaciente($pacienteId, $dataInicio, $dataFim);
+        $lanzamientos = $this->model->getByPaciente($pacienteId, $dataInicio, $dataFim);
         $paciente = $this->pacienteModel->find($pacienteId);
         $saldo = $this->model->getSaldoPaciente($pacienteId, $dataInicio, $dataFim);
     
@@ -141,7 +141,7 @@ class LancamentoController {
 
     public function relatorio(int $lancamentoId): void {
         $paciente = $this->pacienteModel->getPacienteAllInfoByLancamentoId($lancamentoId);
-        $lancamentos = $this->model->getByPaciente($paciente['id_paciente']);
+        $lanzamientos = $this->model->getByPaciente($paciente['id_paciente']);
         $saldo = $this->model->getSaldoPaciente($paciente['id_paciente']);
     
         include __DIR__ . '/../views/movimientos/relatorio.php';
@@ -150,19 +150,19 @@ class LancamentoController {
     public function gerarRelatorioPDF(int $pacienteId): void {
         // Buscar dados do paciente e seus lançamentos
         $paciente = $this->pacienteModel->find($pacienteId);
-        $lancamentos = $this->model->getByPaciente($pacienteId);
+        $lanzamientos = $this->model->getByPaciente($pacienteId);
         $saldo = $this->model->getSaldoPaciente($pacienteId);
     
         // Preparar os dados que serão incluídos no relatório
         $dadosRelatorio = [
             'paciente' => $paciente,
             'saldo' => $saldo,
-            'lancamentos' => $lancamentos
+            'lanzamientos' => $lanzamientos
         ];
     
         // Criar string para geração da assinatura
         $dadosLancamentos = '';
-        foreach ($lancamentos as $lancamento) {
+        foreach ($lanzamientos as $lancamento) {
             $dadosLancamentos .= $lancamento['id_movimiento'] . $lancamento['descripcion'] . $lancamento['valor'];
         }
         $dadosParaAssinar = $paciente['nombre'] . $paciente['cpf'] . $paciente['rg'] . $dadosLancamentos;

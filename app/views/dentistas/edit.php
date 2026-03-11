@@ -11,7 +11,7 @@ $especialidadeName = $especialidadeModel->getAll();
     <div class="form-container">
         <form action="<?= BASE_URL ?>/dentistas/update/<?= $dentista['id_dentista'] ?>" method="POST">
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nome:</label>
+                <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" name="nombre" id="nombre" value="<?= htmlspecialchars($dentista['nombre']) ?>" required>
             </div>
 
@@ -39,12 +39,12 @@ $especialidadeName = $especialidadeModel->getAll();
             </div>
 
             <div class="mb-3">
-                <label for="endereco" class="form-label">Endereço:</label>
+                <label for="endereco" class="form-label">Direccion:</label>
                 <input type="text" class="form-control" name="endereco" id="endereco" value="<?= htmlspecialchars($dentista['endereco']) ?>" required>
             </div>
 
             <div class="mb-3">
-                <label for="ciudades" class="form-label">Cidade:</label>
+                <label for="ciudades" class="form-label">Ciudad:</label>
                 <input type="text" class="form-control" name="ciudades" id="ciudades" value="<?= htmlspecialchars($dentista['ciudades']) ?>" required>
             </div>
 

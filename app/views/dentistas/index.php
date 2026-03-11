@@ -8,7 +8,7 @@ $dentistaModel = new Dentista();
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Dentistas</h1>
             <div class="d-flex gap-2">
-                <a href="<?= BASE_URL ?>/dentistas/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Cadastrar Novo Dentista</a>
+                <a href="<?= BASE_URL ?>/dentistas/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Registrar un nuevo dentista</a>
             </div>
         </div>
 
@@ -18,12 +18,12 @@ $dentistaModel = new Dentista();
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nome</th>
+                    <th>Nombre</th>
                     <th>Especialidade</th>
                     <th>Telefono</th>
                     <th>Email</th>
-                    <th>Endereço</th>
-                    <th>Cidade</th>
+                    <th>Direccion</th>
+                    <th>Ciudad</th>
                     <th>Estado</th>
                     <th>CEP</th>
                     <th>RG</th>
@@ -70,7 +70,7 @@ $dentistaModel = new Dentista();
     
     <div class="d-flex justify-content-end mt-3">
         <a href="<?= BASE_URL ?>/dashboard" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">
-            Voltar para o Dashboard
+            Volver al panel 
         </a>
     </div>
     </div>

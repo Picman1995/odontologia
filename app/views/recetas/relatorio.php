@@ -13,18 +13,18 @@ require_once __DIR__ . '/../layouts/header.php';
     <div class="form-container mt-4 p-4 rounded shadow-sm bg-dark text-light">
 
         <h5 class="border-bottom pb-2 mb-3">Emitente</h5>
-        <p><strong>Nome:</strong> <?= htmlspecialchars($dentista['nombre']) ?> (CRO: <?= htmlspecialchars($dentista['cro']) ?>)</p>
-        <p><strong>Endereço:</strong> <?= htmlspecialchars($dentista['endereco']) ?></p>
-        <p><strong>Cidade:</strong> <?= htmlspecialchars($dentista['ciudades']) ?></p>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?> (CRO: <?= htmlspecialchars($dentista['cro']) ?>)</p>
+        <p><strong>Direccion:</strong> <?= htmlspecialchars($dentista['endereco']) ?></p>
+        <p><strong>Ciudad:</strong> <?= htmlspecialchars($dentista['ciudades']) ?></p>
         <p><strong>Estado:</strong> <?= htmlspecialchars($dentista['estado']) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
 
         <h5 class="border-bottom pb-2 mb-3 mt-4">Cidadão</h5>
-        <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
-        <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?></p>
-        <p><strong>Cidade:</strong> <?= htmlspecialchars($paciente['ciudades']) ?></p>
+        <p><strong>Direccion:</strong> <?= htmlspecialchars($paciente['endereco']) ?></p>
+        <p><strong>Ciudad:</strong> <?= htmlspecialchars($paciente['ciudades']) ?></p>
         <p><strong>Estado:</strong> <?= htmlspecialchars($paciente['estado']) ?></p>
 
         <h5 class="border-bottom pb-2 mb-3 mt-4">Medicamentos</h5>

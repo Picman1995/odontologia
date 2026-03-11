@@ -101,12 +101,12 @@
     <h1>Receituário</h1>
 
     <h5>Emitente</h5>
-    <p><strong>Nome:</strong> <?= htmlspecialchars($dentista['nombre']) ?> - <?= htmlspecialchars($dentista['cro']) ?></p>
-    <p><strong>Endereço:</strong> <?= htmlspecialchars($dentista['endereco']) ?> - <?= htmlspecialchars($dentista['ciudades']) ?>/<?= htmlspecialchars($dentista['estado']) ?></p>
+    <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?> - <?= htmlspecialchars($dentista['cro']) ?></p>
+    <p><strong>Direccion:</strong> <?= htmlspecialchars($dentista['endereco']) ?> - <?= htmlspecialchars($dentista['ciudades']) ?>/<?= htmlspecialchars($dentista['estado']) ?></p>
 
     <h5>Cidadão</h5>
-    <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nombre']) ?> - <strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
-    <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?> - <?= htmlspecialchars(CIDADE_CLINICA) ?>/<?= htmlspecialchars(ESTADO_CLINICA) ?></p>
+    <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?> - <strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
+    <p><strong>Direccion:</strong> <?= htmlspecialchars($paciente['endereco']) ?> - <?= htmlspecialchars(CIDADE_CLINICA) ?>/<?= htmlspecialchars(ESTADO_CLINICA) ?></p>
 
     <h5>Medicamentos</h5>
     <p><?= nl2br(htmlspecialchars($receita['conteudo'])) ?></p>

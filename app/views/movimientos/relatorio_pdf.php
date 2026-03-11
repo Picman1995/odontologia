@@ -120,14 +120,14 @@
         <h1>Relatório de Lançamentos</h1>
 
         <h5>Informações do Paciente</h5>
-        <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
         <p><strong>RG:</strong> <?= htmlspecialchars($paciente['rg']) ?></p>
         <p><strong>Data de Nascimento:</strong> <?= date('d/m/Y', strtotime($paciente['data_nascimento'])) ?></p>
         <p><strong>Sexo:</strong> <?= htmlspecialchars($paciente['sexo']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
-        <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?>, <?= htmlspecialchars($paciente['ciudades']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, CEP: <?= htmlspecialchars($paciente['cep']) ?></p>
+        <p><strong>Direccion:</strong> <?= htmlspecialchars($paciente['endereco']) ?>, <?= htmlspecialchars($paciente['ciudades']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, CEP: <?= htmlspecialchars($paciente['cep']) ?></p>
         <p><strong>Cadastrado em:</strong> <?= date('d/m/Y H:i', strtotime($paciente['created_at'])) ?></p>
 
         <h5>Comunicados financieros</h5>
@@ -143,7 +143,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($lancamentos as $l): ?>
+                <?php foreach ($lanzamientos as $l): ?>
                     <tr>
                         <td style="text-align: center;"><?= $l['id_lancamento'] ?></td>
                         <td style="text-align: center;"><?= date('d/m/Y', strtotime($l['data_lancamento'])) ?></td>

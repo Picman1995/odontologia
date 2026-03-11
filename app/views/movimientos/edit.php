@@ -17,7 +17,7 @@ $pacientes = $pacienteModel->getAll();
     <h1 class="text-center mt-4">Editar Pagamento / Lançamento</h1>
 
     <div class="form-container">
-        <form method="POST" action="<?= BASE_URL ?>/lancamentos/update/<?= $lancamento['id_movimiento'] ?>">
+        <form method="POST" action="<?= BASE_URL ?>/lanzamientos/update/<?= $lancamento['id_movimiento'] ?>">
             <div class="mb-3">
                 <label for="paciente_id" class="form-label">Paciente:</label>
                     <?php foreach ($pacientes as $paciente): ?>
@@ -82,7 +82,7 @@ $pacientes = $pacienteModel->getAll();
         </form>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
+            <a href="<?= BASE_URL ?>/lanzamientos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
         </div>
     </div>
 </div>

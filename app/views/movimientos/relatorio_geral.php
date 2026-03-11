@@ -7,7 +7,7 @@ require_once __DIR__ . '/../layouts/header.php';
     <div class="card bg-dark text-light p-4 rounded-4 shadow">
         <h2 class="mb-4 text-center">Informe Financiero General por Periodo</h2>
 
-        <form method="GET" action="<?= BASE_URL ?>/lancamentos/relatorioGeral" class="row g-3 mb-4">
+        <form method="GET" action="<?= BASE_URL ?>/lanzamientos/relatorioGeral" class="row g-3 mb-4">
             <div class="col-md-5">
                 <label class="form-label">Data Início:</label>
                 <input type="date" name="data_inicio" class="form-control bg-dark text-light border-secondary" value="<?= $_GET['data_inicio'] ?? '' ?>" required>
@@ -58,7 +58,7 @@ require_once __DIR__ . '/../layouts/header.php';
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="4">Nenhum lançamento encontrado para esse período.</td>
+                                <td colspan="4">No se encontraron lanzamientos para ese período.</td>
                             </tr>
                         <?php endif; ?>
                     </tbody>
@@ -80,7 +80,7 @@ require_once __DIR__ . '/../layouts/header.php';
         <?php endif; ?>
 
         <div class="text-center mt-4">
-            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light">Regresar a movimientos</a>
+            <a href="<?= BASE_URL ?>/lanzamientos" class="btn btn-outline-light">Regresar a movimientos</a>
         </div>
     </div>
 </div>

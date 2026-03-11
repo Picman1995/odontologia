@@ -12,7 +12,7 @@ require_once __DIR__ . '/../layouts/header.php';
             <h5 class="mb-3">Dados do Paciente</h5>
             <div class="row">
                 <div class="col-md-6 mb-2">
-                    <strong>Nome:</strong> <?= htmlspecialchars($paciente['nombre']) ?>
+                    <strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
                     <strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?>
@@ -36,10 +36,10 @@ require_once __DIR__ . '/../layouts/header.php';
                     <strong>CEP:</strong> <?= htmlspecialchars($paciente['cep']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?>
+                    <strong>Direccion:</strong> <?= htmlspecialchars($paciente['endereco']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>Cidade:</strong> <?= htmlspecialchars($paciente['ciudades']) ?>
+                    <strong>Ciudad:</strong> <?= htmlspecialchars($paciente['ciudades']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
                     <strong>Estado:</strong> <?= htmlspecialchars($paciente['estado']) ?>
@@ -64,7 +64,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($lancamentos as $l): ?>
+                    <?php foreach ($lanzamientos as $l): ?>
                         <tr>
                             <td><?= $l['id_lancamento'] ?></td>
                             <td><?= date('d/m/Y', strtotime($l['data_lancamento'])) ?></td>
@@ -89,10 +89,10 @@ require_once __DIR__ . '/../layouts/header.php';
 
         <!-- Botões -->
         <div class="text-center mt-4 d-flex flex-column flex-md-row justify-content-center gap-2">
-            <a href="<?= BASE_URL ?>/lancamentos/relatorio/pdf/<?= $paciente['id_paciente'] ?>" class="btn btn-success px-4 shadow-sm" target="_blank">
+            <a href="<?= BASE_URL ?>/lanzamientos/relatorio/pdf/<?= $paciente['id_paciente'] ?>" class="btn btn-success px-4 shadow-sm" target="_blank">
                 <i class="bi bi-file-earmark-pdf"></i> Generar PDF
             </a>
-            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light px-4 shadow-sm">
+            <a href="<?= BASE_URL ?>/lanzamientos" class="btn btn-outline-light px-4 shadow-sm">
                 ← Voltar
             </a>
         </div>

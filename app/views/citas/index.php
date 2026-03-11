@@ -58,7 +58,7 @@ $agendamentoModel = new Agendamento();
 
     <div class="d-flex justify-content-end mt-3">
         <a href="<?= BASE_URL ?>/dashboard" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">
-            Voltar para o Dashboard
+            Volver al panel 
         </a>
     </div>
     </div>

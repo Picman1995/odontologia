@@ -6,11 +6,11 @@ require_once __DIR__ . '/../layouts/header.php';
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Comunicados financieros</h1>
-        <a href="<?= BASE_URL ?>/lancamentos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">+ Novo Lançamento</a>
+        <a href="<?= BASE_URL ?>/lanzamientos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">+ Novo Lançamento</a>
     </div>
 
     <div class="table-responsive bg-dark p-3 rounded shadow-sm">
-        <table id="tabela-lancamentos" class="table table-dark table-striped text-center align-middle">
+        <table id="tabela-lanzamientos" class="table table-dark table-striped text-center align-middle">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -25,7 +25,7 @@ require_once __DIR__ . '/../layouts/header.php';
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($lancamentos as $lanc): ?>
+                <?php foreach ($lanzamientos as $lanc): ?>
                     <tr>
                         <td><?= $lanc['id_lancamento'] ?></td>
                         <td>
@@ -45,22 +45,22 @@ require_once __DIR__ . '/../layouts/header.php';
                         <td>R$ <?= number_format($lanc['valor'], 2, ',', '.') ?></td>
                         <td><?= htmlspecialchars($lanc['descricao']) ?></td>
                         <td>
-                            <a href="<?= BASE_URL ?>/lancamentos/edit/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">
+                            <a href="<?= BASE_URL ?>/lanzamientos/edit/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/lancamentos/delete/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este lançamento?')">
+                            <a href="<?= BASE_URL ?>/lanzamientos/delete/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este lançamento?')">
                                 <i class="bi bi-trash3"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/lancamentos/relatorio/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-secondary" title="Relatório">
+                            <a href="<?= BASE_URL ?>/lanzamientos/relatorio/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-secondary" title="Relatório">
                                 <i class="bi bi-file-earmark-text"></i>
                             </a>
 
                         </td>
                     </tr>
                 <?php endforeach; ?>
-                <?php if (empty($lancamentos)): ?>
+                <?php if (empty($lanzamientos)): ?>
                     <tr>
-                        <td colspan="9">Nenhum lançamento cadastrado.</td>
+                        <td colspan="9">No se han registrado liberaciones.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
@@ -69,14 +69,14 @@ require_once __DIR__ . '/../layouts/header.php';
 
     <div class="d-flex justify-content-end mt-3">
         <a href="<?= BASE_URL ?>/dashboard" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">
-            Voltar para o Dashboard
+            Volver al panel 
         </a>
     </div>
 </div>
 
 <script>
     $(document).ready(function () {
-        $('#tabela-lancamentos').DataTable({
+        $('#tabela-lanzamientos').DataTable({
             "scrollX": true,
             language: {
                 url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"

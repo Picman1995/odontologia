@@ -45,7 +45,7 @@ Histórico médico:
 1.1 Em caso positivo, qual (is):
 2. Está fazendo tratamento médico atualmente: ( ) Sim ( ) Não
 2.1 Em caso positivo, qua l(is):
-2.2 Nome do médico responsável:
+2.2 Nombre do médico responsável:
 2.3 Telefono para contato:
 3. Está fazendo uso de medicação: ( ) Sim ( ) Não3.1 Em caso positivo, qual (is):
 4. Está grávida: ( ) Sim ( ) Não

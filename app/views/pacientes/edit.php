@@ -8,7 +8,7 @@ require_once __DIR__ . '/../layouts/header.php';
     <div class="form-container">
         <form action="<?= BASE_URL ?>/pacientes/update/<?= $paciente['id_paciente'] ?>" method="POST">
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nome:</label>
+                <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" name="nombre" id="nombre" value="<?= htmlspecialchars($paciente['nombre']) ?>" required>
             </div>
 

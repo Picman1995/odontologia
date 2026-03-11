@@ -9,7 +9,7 @@ require_once __DIR__ . '/../layouts/header.php';
     <div class="form-container">
         <form action="<?= BASE_URL ?>/funcionarios/update/<?= $funcionario['id_funcionario'] ?>" method="POST">
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nome:</label>
+                <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" name="nombre" id="nombre" value="<?= htmlspecialchars($funcionario['nombre']) ?>" required>
             </div>
 
@@ -49,7 +49,7 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
 
             <div class="mb-3">
-                <label for="endereco" class="form-label">Endereço:</label>
+                <label for="endereco" class="form-label">Direccion:</label>
                 <input type="text" class="form-control" name="endereco" id="endereco" value="<?= htmlspecialchars($funcionario['endereco']) ?>" required>
             </div>
 
@@ -59,7 +59,7 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
 
             <div class="mb-3">
-                <label for="ciudades" class="form-label">Cidade:</label>
+                <label for="ciudades" class="form-label">Ciudad:</label>
                 <input type="text" class="form-control" name="ciudades" id="ciudades" value="<?= htmlspecialchars($funcionario['ciudades']) ?>" required>
             </div>
 

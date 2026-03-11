@@ -6,12 +6,12 @@ $especialidadeName = $especialidadeModel->getAll();
 ?>
 
 <div class="container">
-    <h1 class="text-center mt-4">Cadastrar Novo Dentista</h1>
+    <h1 class="text-center mt-4">Registrar un nuevo dentista</h1>
 
     <div class="form-container">
         <form action="<?= BASE_URL ?>/dentistas/store" method="POST">
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nome:</label>
+                <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" name="nombre" id="nombre" required>
             </div>
 
@@ -38,12 +38,12 @@ $especialidadeName = $especialidadeModel->getAll();
             </div>
 
             <div class="mb-3">
-                <label for="endereco" class="form-label">Endereço:</label>
+                <label for="endereco" class="form-label">Direccion:</label>
                 <input type="text" class="form-control" name="endereco" id="endereco" required>
             </div>
 
             <div class="mb-3">
-                <label for="ciudades" class="form-label">Cidade:</label>
+                <label for="ciudades" class="form-label">Ciudad:</label>
                 <input type="text" class="form-control" name="ciudades" id="ciudades" required>
             </div>
 

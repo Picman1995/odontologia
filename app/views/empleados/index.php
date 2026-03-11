@@ -17,16 +17,16 @@ require_once __DIR__ . '/../layouts/header.php';
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nome</th>
+                    <th>Nombre</th>
                     <th>Cargo</th>
                     <th>Telefono</th>
                     <th>Email</th>
                     <th>CPF</th>
                     <th>RG</th>
                     <th>Sexo</th>
-                    <th>Endereço</th>
+                    <th>Direccion</th>
                     <th>CEP</th>
-                    <th>Cidade</th>
+                    <th>Ciudad</th>
                     <th>Estado</th>
                     <th>Ações</th>
                 </tr>
@@ -62,7 +62,7 @@ require_once __DIR__ . '/../layouts/header.php';
     </div>
     <div class="d-flex justify-content-end mt-3">
         <a href="<?= BASE_URL ?>/dashboard" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">
-            Voltar para o Dashboard
+            Volver al panel 
         </a>
     </div>
     </div>
