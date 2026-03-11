@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
         <?php unset($_SESSION['error']); ?>
     <?php endif; ?>
 
-    <h1 class="text-center mt-4">Criar Novo Usuário</h1>
+    <h1 class="text-center mt-4">Crear nuevo usuario</h1>
 
     <div class="form-container">
         <form action="<?= BASE_URL ?>/usuarios/store" method="POST">

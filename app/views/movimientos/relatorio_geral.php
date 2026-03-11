@@ -80,7 +80,7 @@ require_once __DIR__ . '/../layouts/header.php';
         <?php endif; ?>
 
         <div class="text-center mt-4">
-            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light">← Voltar para lançamentos</a>
+            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light">Regresar a movimientos</a>
         </div>
     </div>
 </div>

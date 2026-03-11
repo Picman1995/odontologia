@@ -6,9 +6,9 @@ $orcamentoModel = new Orcamento();
 
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1>Orçamentos</h1>
+            <h1>Presupuesto</h1>
             <div class="d-flex gap-2">
-                <a href="<?= BASE_URL ?>/orcamentos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Cadastra Novo Orçamento</a>
+                <a href="<?= BASE_URL ?>/orcamentos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Nuevo Presupuesto</a>
             </div>
         </div>
     <!-- Tabela -->
@@ -19,10 +19,10 @@ $orcamentoModel = new Orcamento();
                     <th>ID</th>
                     <th>Paciente</th>
                     <th>Dentista</th>
-                    <th>Serviço</th>
+                    <th>Servicio</th>
                     <th>Valor</th>
-                    <th>Data</th>
-                    <th>Ações</th>
+                    <th>Dato</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>

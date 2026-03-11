@@ -126,7 +126,7 @@ $totalAgendamentos = $agendamentoModel->total();
         <div class="col">
             <div class="card bg-dark text-white h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Orçamentos</h5>
+                    <h5 class="card-title">Presupuesto</h5>
                     <p class="card-text display-6"><?= $totalOrcamentos ?? 0 ?></p>
                 </div>
             </div>

@@ -72,7 +72,7 @@ require_once __DIR__ . '/../layouts/header.php';
         </div>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light">← Voltar para lançamentos</a>
+            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light">Regresar a movimientos</a>
         </div>
     </div>
 </div>
