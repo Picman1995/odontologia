@@ -43,7 +43,7 @@ $totalAgendamentos = $agendamentoModel->total();
       
             <br>
 
-            <h4 class="text-center mb-3"><i class="bi bi-hospital-fill me-2"></i>Informaciones de la Clinica</h4>
+            <h4 class="text-center mb-3"><i class="bi bi-hospital-fill me-2"></i>Informacion de la Clinica</h4>
 
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -134,7 +134,7 @@ $totalAgendamentos = $agendamentoModel->total();
         <div class="col">
             <div class="card bg-dark text-white h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Agendamentos</h5>
+                    <h5 class="card-title">Agendamientos</h5>
                     <p class="card-text display-6"><?= $totalAgendamentos ?? 0 ?></p>
                 </div>
             </div>

@@ -19,7 +19,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Cargo</th>
-                    <th>Telefone</th>
+                    <th>Telefono</th>
                     <th>Email</th>
                     <th>CPF</th>
                     <th>RG</th>
@@ -35,7 +35,7 @@ require_once __DIR__ . '/../layouts/header.php';
                 <?php foreach ($funcionarios as $funcionario): ?>
                     <tr>
                         <td><?= htmlspecialchars($funcionario['id_funcionario']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['nome']) ?></td>
+                        <td><?= htmlspecialchars($funcionario['nombre']) ?></td>
                         <td><?= htmlspecialchars($funcionario['cargo']) ?></td>
                         <td><?= htmlspecialchars($funcionario['telefono']) ?></td>
                         <td><?= htmlspecialchars($funcionario['email']) ?></td>
@@ -44,7 +44,7 @@ require_once __DIR__ . '/../layouts/header.php';
                         <td><?= htmlspecialchars($funcionario['sexo']) ?></td>
                         <td><?= htmlspecialchars($funcionario['endereco']) ?></td>
                         <td><?= htmlspecialchars($funcionario['cep']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['cidade']) ?></td>
+                        <td><?= htmlspecialchars($funcionario['ciudades']) ?></td>
                         <td><?= htmlspecialchars($funcionario['estado']) ?></td>
                         <td>
                                                                     

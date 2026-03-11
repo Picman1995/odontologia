@@ -52,7 +52,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
         </form>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/usuarios" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Voltar para lista</a>
+            <a href="<?= BASE_URL ?>/usuarios" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
         </div>
     </div>
 </div>

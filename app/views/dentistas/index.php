@@ -20,7 +20,7 @@ $dentistaModel = new Dentista();
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Especialidade</th>
-                    <th>Telefone</th>
+                    <th>Telefono</th>
                     <th>Email</th>
                     <th>Endereço</th>
                     <th>Cidade</th>
@@ -36,7 +36,7 @@ $dentistaModel = new Dentista();
                 <?php foreach ($dentistas as $dentista): ?>
                     <tr>
                         <td><?= htmlspecialchars($dentista['id_dentista']) ?></td>
-                        <td><?= htmlspecialchars($dentista['nome']) ?></td>
+                        <td><?= htmlspecialchars($dentista['nombre']) ?></td>
                         <td>
                             <?php
                                 $nomeEspecialidade = $dentistaModel->getEspecialidadeNameById($dentista['especialidade_id']);
@@ -46,7 +46,7 @@ $dentistaModel = new Dentista();
                         <td><?= htmlspecialchars($dentista['telefono']) ?></td>
                         <td><?= htmlspecialchars($dentista['email']) ?></td>
                         <td><?= htmlspecialchars($dentista['endereco']) ?></td>
-                        <td><?= htmlspecialchars($dentista['cidade']) ?></td>
+                        <td><?= htmlspecialchars($dentista['ciudades']) ?></td>
                         <td><?= htmlspecialchars($dentista['estado']) ?></td>
                         <td><?= htmlspecialchars($dentista['cep']) ?></td>
                         <td><?= htmlspecialchars($dentista['rg']) ?></td>

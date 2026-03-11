@@ -1,5 +1,5 @@
 <?php 
-$pageTitle = "Alterar Senha - Sistema Odontológico";
+$pageTitle = "Cambiar contraseña - Sistema Odontológico";
 require_once __DIR__ . '/../layouts/header.php'; 
 
 if (session_status() === PHP_SESSION_NONE) session_start();
@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
         <?php unset($_SESSION['error']); ?>
     <?php endif; ?>
 
-    <h1 class="text-center mt-4">Alterar Senha</h1>
+    <h1 class="text-center mt-4">Cambiar contraseña</h1>
 
     <div class="form-container">
         <form action="<?= BASE_URL ?>/usuarios/change-password" method="POST">
@@ -38,7 +38,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
         </form>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Voltar para Início</a>
+            <a href="<?= BASE_URL ?>" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Volver al inicio</a>
         </div>
     </div>
 </div>

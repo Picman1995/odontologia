@@ -19,7 +19,7 @@ $dentistaModel = new Dentista();
                 <th>ID</th>
                 <th>Paciente</th>
                 <th>Dentista</th>
-                <th>Descrição</th>
+                <th>Descripcion</th>
                 <th>Data</th>
                 <th>Ações</th>
             </tr>
@@ -37,7 +37,7 @@ $dentistaModel = new Dentista();
                     <td>
                     <?php
                         $nomeDentista = $dentistaModel->find($anamnese['dentista_id']);
-                        echo $nomeDentista['nome'];
+                        echo $nomeDentista['nombre'];
                     ?>
                     </td>
                     <td><?= nl2br(htmlspecialchars($anamnese['descricao'])) ?></td>

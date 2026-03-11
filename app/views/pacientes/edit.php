@@ -58,7 +58,7 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
 
             <div class="mb-3">
-                <label for="telefono" class="form-label">Telefone:</label>
+                <label for="telefono" class="form-label">Telefono:</label>
                 <input type="text" class="form-control" name="telefono" id="telefono" value="<?= htmlspecialchars($paciente['telefono']) ?>" required>
             </div>
 

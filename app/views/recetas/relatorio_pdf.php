@@ -101,18 +101,18 @@
     <h1>Receituário</h1>
 
     <h5>Emitente</h5>
-    <p><strong>Nome:</strong> <?= htmlspecialchars($dentista['nome']) ?> - <?= htmlspecialchars($dentista['cro']) ?></p>
-    <p><strong>Endereço:</strong> <?= htmlspecialchars($dentista['endereco']) ?> - <?= htmlspecialchars($dentista['cidade']) ?>/<?= htmlspecialchars($dentista['estado']) ?></p>
+    <p><strong>Nome:</strong> <?= htmlspecialchars($dentista['nombre']) ?> - <?= htmlspecialchars($dentista['cro']) ?></p>
+    <p><strong>Endereço:</strong> <?= htmlspecialchars($dentista['endereco']) ?> - <?= htmlspecialchars($dentista['ciudades']) ?>/<?= htmlspecialchars($dentista['estado']) ?></p>
 
     <h5>Cidadão</h5>
-    <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nome']) ?> - <strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
+    <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nombre']) ?> - <strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
     <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?> - <?= htmlspecialchars(CIDADE_CLINICA) ?>/<?= htmlspecialchars(ESTADO_CLINICA) ?></p>
 
     <h5>Medicamentos</h5>
     <p><?= nl2br(htmlspecialchars($receita['conteudo'])) ?></p>
 
     <div class="assinatura">
-        <p><?= htmlspecialchars($dentista['nome']) ?><br><?= htmlspecialchars($dentista['cro']) ?><br><?= htmlspecialchars($paciente['cidade']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, <?php echo"$dia de {$meses[$mes]} de $ano" ?></p>
+        <p><?= htmlspecialchars($dentista['nombre']) ?><br><?= htmlspecialchars($dentista['cro']) ?><br><?= htmlspecialchars($paciente['ciudades']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, <?php echo"$dia de {$meses[$mes]} de $ano" ?></p>
     </div>
 
     <h5><strong>Assinado digitalmente.</strong></h5>

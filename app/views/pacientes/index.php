@@ -21,7 +21,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>Nacimiento</th>
                     <th>Dirección</th>
                     <th>CEP</th>
-                    <th>Telefone</th>
+                    <th>Telefono</th>
                     <th>Email</th>
                     <th>CPF</th>
                     <th>RG</th>

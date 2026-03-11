@@ -16,11 +16,11 @@ $dentistaModel = new Dentista();
                     <?php 
                         if ($paciente['id_paciente'] == $receita['paciente_id']) {
                             $id_paciente = $paciente['id_paciente'];
-                            $nome_paciente = $paciente['nome'];
+                            $nome_paciente = $paciente['nombre'];
                         } 
                     ?>
                 <?php endforeach; ?>
-            <input type="text" id="search" class="form-control" placeholder="Digite um nome..." onkeyup="searchData()" value="<?= htmlspecialchars($nome_paciente) ?>">
+            <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()" value="<?= htmlspecialchars($nome_paciente) ?>">
             <div id="suggestions" class="list-group mt-2"></div>
             <input type="hidden" name="paciente_id" id="paciente_id" value="<?= $id_paciente ?>"> <!-- Campo oculto para armazenar o id_paciente -->
         </div>
@@ -31,7 +31,7 @@ $dentistaModel = new Dentista();
                 <?php foreach ($dentistas as $d): ?>
                     <?php $especialidade = $dentistaModel->getEspecialidadeNameById($d['especialidade_id']); ?>
                     <option value="<?= $d['id_dentista'] ?>" <?= $d['id_dentista'] == $receita['dentista_id'] ? 'selected' : '' ?>>
-                        <?= htmlspecialchars($d['nome']) ?> - <?= $especialidade ?>
+                        <?= htmlspecialchars($d['nombre']) ?> - <?= $especialidade ?>
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -72,8 +72,8 @@ $dentistaModel = new Dentista();
         }
 
         // Função para selecionar um item da lista de sugestões
-        function selectPatient(id, nome) {
-            $('#search').val(nome);  // Atualiza o valor do input com o nome do paciente
+        function selectPatient(id, nombre) {
+            $('#search').val(nombre);  // Atualiza o valor do input com o nombre do paciente
             $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
             $('#suggestions').html(''); // Limpa as sugestões após a seleção
         }
@@ -83,7 +83,7 @@ $dentistaModel = new Dentista();
             var pacienteId = $('#paciente_id').val();
             var pacienteNome = $('#search').val();
 
-            // Se tiver um id paciente e nome já definidos, faz a seleção automaticamente
+            // Se tiver um id paciente e nombre já definidos, faz a seleção automaticamente
             if (pacienteId && pacienteNome) {
                 $('#search').val(pacienteNome);
                 $('#paciente_id').val(pacienteId);

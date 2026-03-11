@@ -19,8 +19,8 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>Data</th>
                     <th>Tipo</th>
                     <th>Categoria</th>
-                    <th>Valor (R$)</th>
-                    <th>Descrição</th>
+                    <th>Valor (Gs)</th>
+                    <th>Descripcion</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@ require_once __DIR__ . '/../layouts/header.php';
                         <td>
                             <?php
                                 $paciente = (new Paciente())->find($lanc['paciente_id']);
-                                echo htmlspecialchars($paciente['nome'] ?? 'Desconhecido');
+                                echo htmlspecialchars($paciente['nombre'] ?? 'Desconhecido');
                             ?>
                         </td>
                         <td><?= $lanc['orcamento_id'] ? '#' . $lanc['orcamento_id'] : '-' ?></td>

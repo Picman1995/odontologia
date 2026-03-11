@@ -18,7 +18,7 @@ $dentistaName = $dentistaModel->getAll();
                                 <option value="">--Escolha um Dentista--</option>
                             <?php foreach ($dentistaName as $dentista): ?>
                                 <?php $especialidade = $dentistaModel->getEspecialidadeNameById($dentista['especialidade_id']); ?>
-                                <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>"><?= htmlspecialchars($dentista['nome']) ?> - <?= $especialidade ?></option>                          
+                                <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>"><?= htmlspecialchars($dentista['nombre']) ?> - <?= $especialidade ?></option>                          
                             <?php endforeach; ?>    
                         </select>
                 </div>
@@ -26,7 +26,7 @@ $dentistaName = $dentistaModel->getAll();
                 <div class="mb-3">
                     <label for="paciente_id" class="form-label">Paciente:</label>
 
-                        <input type="text" id="search" class="form-control" placeholder="Digite um nome..." onkeyup="searchData()">
+                        <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()">
                         <div id="suggestions" class="list-group mt-2"></div>
                         <input type="hidden" name="paciente_id" id="paciente_id"> <!-- Campo oculto para armazenar o id_paciente -->
 
@@ -34,7 +34,7 @@ $dentistaName = $dentistaModel->getAll();
                 </div>
 
                 <div class="mb-3">
-                    <label for="descricao" class="form-label">Descrição:</label>
+                    <label for="descricao" class="form-label">Descripcion:</label>
                     <textarea class="form-control" name="descricao" id="descricao" rows="20" required>
 Queixa principal:
 
@@ -46,7 +46,7 @@ Histórico médico:
 2. Está fazendo tratamento médico atualmente: ( ) Sim ( ) Não
 2.1 Em caso positivo, qua l(is):
 2.2 Nome do médico responsável:
-2.3 Telefone para contato:
+2.3 Telefono para contato:
 3. Está fazendo uso de medicação: ( ) Sim ( ) Não3.1 Em caso positivo, qual (is):
 4. Está grávida: ( ) Sim ( ) Não
 4.1 Em caso positivo, qual a idade gestacional: ___semanas e ___dias
@@ -81,33 +81,31 @@ Histórico médico:
 
     
     <script>
-        // Função chamada a cada digitação no campo de texto
         function searchData() {
-            var query = $('#search').val(); // Obtém o valor digitado no campo de texto
+            var query = $('#search').val(); 
             
             if (query.length > 0) {
                 $.ajax({
-                    url: '<?= BASE_URL ?>/search.php', // Verifique se o caminho está correto
+                    url: '<?= BASE_URL ?>/search.php', 
                     method: 'GET',
-                    data: { query: query }, // Envia a consulta de busca
+                    data: { query: query }, 
                     success: function(response) {
-                        $('#suggestions').html(response); // Exibe os resultados recebidos
+                        $('#suggestions').html(response); 
                     },
                     error: function(xhr, status, error) {
-                        console.log('AJAX Error: ' + status + ' - ' + error); // Exibe o erro no console para depuração
+                        console.log('AJAX Error: ' + status + ' - ' + error);
                         $('#suggestions').html('<p>Ocorreu um erro ao buscar os resultados. Tente novamente mais tarde.</p>'); // Exibe mensagem de erro para o usuário
                     }
                 });
             } else {
-                $('#suggestions').html(''); // Limpa as sugestões se o campo estiver vazio
+                $('#suggestions').html(''); 
             }
         }
 
-        // Função para selecionar um item da lista de sugestões
-        function selectPatient(id, nome) {
-            $('#search').val(nome);  // Atualiza o valor do input com o nome do paciente
-            $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
-            $('#suggestions').html(''); // Limpa as sugestões após a seleção
+        function selectPatient(id, nombre) {
+            $('#search').val(nombre); 
+            $('#paciente_id').val(id);
+            $('#suggestions').html(''); 
         }
     </script>
 

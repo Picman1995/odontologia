@@ -23,7 +23,7 @@ $dentistaName = $dentistaModel->getAll();
                 <div class="mb-3">
                     <label for="paciente_id" class="form-label">Paciente:</label>
                           
-                        <input type="text" id="search" class="form-control" placeholder="Digite um nome..." onkeyup="searchData()">
+                        <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()">
                         <div id="suggestions" class="list-group mt-2"></div>
                         <input type="hidden" name="paciente_id" id="paciente_id"> <!-- Campo oculto para armazenar o id_paciente -->
                 </div>
@@ -33,17 +33,17 @@ $dentistaName = $dentistaModel->getAll();
                                 <option value="">--Escolha um Dentista--</option>
                             <?php foreach ($dentistaName as $dentista): ?>
                                 <?php $nomeEspecialidade = $dentistaModel->getEspecialidadeNameById($dentista['especialidade_id']); ?>
-                                <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>"><?= htmlspecialchars($dentista['nome']) ?> - <?= htmlspecialchars($nomeEspecialidade) ?></option>                          
+                                <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>"><?= htmlspecialchars($dentista['nombre']) ?> - <?= htmlspecialchars($nomeEspecialidade) ?></option>                          
                             <?php endforeach; ?>    
                         </select>
                 </div>
                 <div class="mb-3">
-                    <label for="descricao_servico" class="form-label">Descrição do Serviço:</label>
+                    <label for="descricao_servico" class="form-label">Descripcion do Serviço:</label>
                     <textarea class="form-control" name="descricao_servico" id="descricao_servico" rows="4" required></textarea>
                 </div>
 
                 <div class="mb-3">
-                    <label for="valor" class="form-label">Valor (R$):</label>
+                    <label for="valor" class="form-label">Valor (Gs):</label>
                     <input type="number" class="form-control" name="valor" id="valor" step="0.01" required>
                 </div>
 
@@ -85,8 +85,8 @@ $dentistaName = $dentistaModel->getAll();
         }
 
         // Função para selecionar um item da lista de sugestões
-        function selectPatient(id, nome) {
-            $('#search').val(nome);  // Atualiza o valor do input com o nome do paciente
+        function selectPatient(id, nombre) {
+            $('#search').val(nombre);  // Atualiza o valor do input com o nombre do paciente
             $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
             $('#suggestions').html(''); // Limpa as sugestões após a seleção
         }

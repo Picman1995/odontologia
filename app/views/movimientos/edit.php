@@ -28,7 +28,7 @@ $pacientes = $pacienteModel->getAll();
                             } 
                         ?>
                     <?php endforeach; ?>                
-                <input type="text" id="search" class="form-control" placeholder="Digite um nome..." onkeyup="searchData()" value="<?= htmlspecialchars($nome_paciente) ?>">
+                <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()" value="<?= htmlspecialchars($nome_paciente) ?>">
                 <div id="suggestions" class="list-group mt-2"></div>
                 <input type="hidden" name="paciente_id" id="paciente_id" value="<?= $id_paciente ?>"> <!-- Campo oculto para armazenar o id_paciente -->
             </div>
@@ -54,7 +54,7 @@ $pacientes = $pacienteModel->getAll();
                 <label for="tipo" class="form-label">Tipo:</label>
                 <select class="form-control" name="tipo" id="tipo" required>
                     <option value="credito" <?= $lancamento['tipo'] === 'credito' ? 'selected' : '' ?>>Crédito (Entrada)</option>    
-                    <option value="debito" <?= $lancamento['tipo'] === 'debito' ? 'selected' : '' ?>>Débito (Saída)</option>
+                    <option value="debito" <?= $lancamento['tipo'] === 'debito' ? 'selected' : '' ?>>Débito (Salida)</option>
                 </select>
             </div>
 
@@ -69,12 +69,12 @@ $pacientes = $pacienteModel->getAll();
             </div>
 
             <div class="mb-3">
-                <label for="valor" class="form-label">Valor (R$):</label>
+                <label for="valor" class="form-label">Valor (Gs):</label>
                 <input type="number" step="0.01" name="valor" id="valor" class="form-control" value="<?= $lancamento['valor'] ?>" required>
             </div>
 
             <div class="mb-3">
-                <label for="descricao" class="form-label">Descrição:</label>
+                <label for="descricao" class="form-label">Descripcion:</label>
                 <textarea name="descripcion" id="descripcion" class="form-control" rows="3"><?= htmlspecialchars($lancamento['descripcion']) ?></textarea>
             </div>
 
@@ -82,7 +82,7 @@ $pacientes = $pacienteModel->getAll();
         </form>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Voltar para lista</a>
+            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
         </div>
     </div>
 </div>
@@ -108,8 +108,8 @@ $pacientes = $pacienteModel->getAll();
         }
 
         // Função para selecionar um item da lista de sugestões
-        function selectPatient(id, nome) {
-            $('#search').val(nome);  // Atualiza o valor do input com o nome do paciente
+        function selectPatient(id, nombre) {
+            $('#search').val(nombre);  // Atualiza o valor do input com o nombre do paciente
             $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
             $('#suggestions').html(''); // Limpa as sugestões após a seleção
         }
@@ -119,7 +119,7 @@ $pacientes = $pacienteModel->getAll();
             var pacienteId = $('#paciente_id').val();
             var pacienteNome = $('#search').val();
 
-            // Se tiver um id paciente e nome já definidos, faz a seleção automaticamente
+            // Se tiver um id paciente e nombre já definidos, faz a seleção automaticamente
             if (pacienteId && pacienteNome) {
                 $('#search').val(pacienteNome);
                 $('#paciente_id').val(pacienteId);

@@ -1,11 +1,11 @@
 <?php 
-$pageTitle = "Lista de Agendamentos - Sistema Odontológico";
+$pageTitle = "Lista de Agendamientos - Sistema Odontológico";
 require_once __DIR__ . '/../layouts/header.php';
 $agendamentoModel = new Agendamento();
 ?>
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1>Agendamentos</h1>
+            <h1>Agendamientos</h1>
             <div class="d-flex gap-2">
                 <a href="<?= BASE_URL ?>/agendamentos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Novo Agendamento</a>
                 <a href="<?= BASE_URL ?>/agendamentos/calendario" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Exibir Calendário</a>
@@ -19,7 +19,7 @@ $agendamentoModel = new Agendamento();
                     <th>Paciente</th>
                     <th>Dentista</th>
                     <th>Data e Hora</th>
-                    <th>Descrição</th>
+                    <th>Descripcion</th>
                     <th>Ações</th>
                 </tr>
             </thead>

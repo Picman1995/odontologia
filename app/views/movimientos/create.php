@@ -11,14 +11,14 @@ $orcamentoModel = new Orcamento();
         </div>
     <?php endif; ?>
 
-    <h1 class="text-center mt-4">Registrar Pagamento / Lançamento</h1>
+    <h1 class="text-center mt-4">Registrar Pago/Transacción</h1>
 
     <div class="form-container">
         <form method="POST" action="<?= BASE_URL ?>/lancamentos/store">
             <div class="mb-3">
                 <label for="paciente_id" class="form-label">Paciente:</label>
                 
-                <input type="text" id="search" class="form-control" placeholder="Digite um nome..." onkeyup="searchData()">
+                <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()">
                 <div id="suggestions" class="list-group mt-2"></div>
                 <input type="hidden" name="paciente_id" id="paciente_id"> <!-- Campo oculto para armazenar o id_paciente -->
 
@@ -45,7 +45,7 @@ $orcamentoModel = new Orcamento();
                 <label for="tipo" class="form-label">Tipo:</label>
                 <select class="form-control" name="tipo" id="tipo" required>
                     <option value="credito">Crédito (Entrada)</option>
-                    <option value="debito">Débito (Saída)</option>
+                    <option value="debito">Débito (Salida)</option>
                 </select>
             </div>
 
@@ -60,20 +60,20 @@ $orcamentoModel = new Orcamento();
             </div>
 
             <div class="mb-3">
-                <label for="valor" class="form-label">Valor (R$):</label>
+                <label for="valor" class="form-label">Valor (Gs):</label>
                 <input type="number" step="0.01" name="valor" id="valor" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="descricao" class="form-label">Descrição:</label>
+                <label for="descricao" class="form-label">Descripcion:</label>
                 <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-custom w-100">Salvar Lançamento</button>
+            <button type="submit" class="btn btn-custom w-100">Guardar</button>
         </form>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Voltar para lista</a>
+            <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
         </div>
     </div>
 </div>
@@ -103,8 +103,8 @@ $orcamentoModel = new Orcamento();
         }
 
         // Função para selecionar um item da lista de sugestões
-        function selectPatient(id, nome) {
-            $('#search').val(nome);  // Atualiza o valor do input com o nome do paciente
+        function selectPatient(id, nombre) {
+            $('#search').val(nombre);  // Atualiza o valor do input com o nombre do paciente
             $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
             $('#suggestions').html(''); // Limpa as sugestões após a seleção
         }

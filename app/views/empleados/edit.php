@@ -9,8 +9,8 @@ require_once __DIR__ . '/../layouts/header.php';
     <div class="form-container">
         <form action="<?= BASE_URL ?>/funcionarios/update/<?= $funcionario['id_funcionario'] ?>" method="POST">
             <div class="mb-3">
-                <label for="nome" class="form-label">Nome:</label>
-                <input type="text" class="form-control" name="nome" id="nome" value="<?= htmlspecialchars($funcionario['nome']) ?>" required>
+                <label for="nombre" class="form-label">Nome:</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" value="<?= htmlspecialchars($funcionario['nombre']) ?>" required>
             </div>
 
             <div class="mb-3">
@@ -19,7 +19,7 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
 
             <div class="mb-3">
-                <label for="telefono" class="form-label">Telefone:</label>
+                <label for="telefono" class="form-label">Telefono:</label>
                 <input type="text" class="form-control" name="telefono" id="telefono" value="<?= htmlspecialchars($funcionario['telefono']) ?>" required>
             </div>
 
@@ -59,8 +59,8 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
 
             <div class="mb-3">
-                <label for="cidade" class="form-label">Cidade:</label>
-                <input type="text" class="form-control" name="cidade" id="cidade" value="<?= htmlspecialchars($funcionario['cidade']) ?>" required>
+                <label for="ciudades" class="form-label">Cidade:</label>
+                <input type="text" class="form-control" name="ciudades" id="ciudades" value="<?= htmlspecialchars($funcionario['ciudades']) ?>" required>
             </div>
 
             <div class="mb-3">

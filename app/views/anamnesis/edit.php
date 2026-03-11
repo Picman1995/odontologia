@@ -18,7 +18,7 @@ $dentistaName = $dentistaModel->getAll();
                                 <option value="">--Escolha um Dentista--</option>
                             <?php foreach ($dentistaName as $dentista): ?>
                                 <?php $especialidade = $dentistaModel->getEspecialidadeNameById($dentista['especialidade_id']); ?>
-                                <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>" <?= (htmlspecialchars($dentista['id_dentista']) == htmlspecialchars($anamnese['dentista_id'])) ? "selected" : "" ?>><?= htmlspecialchars($dentista['nome']) ?> - <?= htmlspecialchars($especialidade) ?></option>                          
+                                <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>" <?= (htmlspecialchars($dentista['id_dentista']) == htmlspecialchars($anamnese['dentista_id'])) ? "selected" : "" ?>><?= htmlspecialchars($dentista['nombre']) ?> - <?= htmlspecialchars($especialidade) ?></option>                          
                             <?php endforeach; ?>    
                         </select>
                 </div>
@@ -29,18 +29,18 @@ $dentistaName = $dentistaModel->getAll();
                                 <?php 
                                     if ($paciente['id_paciente'] == $anamnese['paciente_id']) {
                                         $id_paciente = $paciente['id_paciente'];
-                                        $nome_paciente = $paciente['nome'];
+                                        $nome_paciente = $paciente['nombre'];
                                     } 
                                 ?>
                             <?php endforeach; ?> 
 
-                        <input type="text" id="search" class="form-control" placeholder="Digite um nome..." onkeyup="searchData()" value="<?= htmlspecialchars($nome_paciente) ?>">
+                        <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()" value="<?= htmlspecialchars($nome_paciente) ?>">
                         <div id="suggestions" class="list-group mt-2"></div>
                         <input type="hidden" name="paciente_id" id="paciente_id" value="<?= $id_paciente ?>"> <!-- Campo oculto para armazenar o id_paciente -->
                 </div>
 
                 <div class="mb-3">
-                    <label for="descricao" class="form-label">Descrição:</label>
+                    <label for="descricao" class="form-label">Descripcion:</label>
                     <textarea class="form-control" name="descricao" id="descricao" rows="20" required><?= htmlspecialchars($anamnese['descricao']) ?></textarea>
                 </div>
 
@@ -78,8 +78,8 @@ $dentistaName = $dentistaModel->getAll();
         }
 
         // Função para selecionar um item da lista de sugestões
-        function selectPatient(id, nome) {
-            $('#search').val(nome);  // Atualiza o valor do input com o nome do paciente
+        function selectPatient(id, nombre) {
+            $('#search').val(nombre);  // Atualiza o valor do input com o nombre do paciente
             $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
             $('#suggestions').html(''); // Limpa as sugestões após a seleção
         }
@@ -89,7 +89,7 @@ $dentistaName = $dentistaModel->getAll();
             var pacienteId = $('#paciente_id').val();
             var pacienteNome = $('#search').val();
 
-            // Se tiver um id paciente e nome já definidos, faz a seleção automaticamente
+            // Se tiver um id paciente e nombre já definidos, faz a seleção automaticamente
             if (pacienteId && pacienteNome) {
                 $('#search').val(pacienteNome);
                 $('#paciente_id').val(pacienteId);

@@ -13,7 +13,7 @@ require_once __DIR__ . '/../layouts/header.php';
                 <input type="date" name="data_inicio" class="form-control bg-dark text-light border-secondary" value="<?= $_GET['data_inicio'] ?? '' ?>">
             </div>
             <div class="col-md-5">
-                <label class="form-label">Data Fim:</label>
+                <label class="form-label">Data Fin:</label>
                 <input type="date" name="data_fim" class="form-control bg-dark text-light border-secondary" value="<?= $_GET['data_fim'] ?? '' ?>">
             </div>
             <div class="col-md-2 d-flex align-items-end">
@@ -22,7 +22,7 @@ require_once __DIR__ . '/../layouts/header.php';
         </form>
 
         <?php if ($paciente): ?>
-            <h4 class="mb-3">Paciente: <?= htmlspecialchars($paciente['nome']) ?></h4>
+            <h4 class="mb-3">Paciente: <?= htmlspecialchars($paciente['nombre']) ?></h4>
         <?php else: ?>
             <h4 class="mb-3">Paciente não encontrado</h4>
         <?php endif; ?>
@@ -34,8 +34,8 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>Data</th>
                     <th>Tipo</th>
                     <th>Categoria</th>
-                    <th>Valor (R$)</th>
-                    <th>Descrição</th>
+                    <th>Valor (Gs)</th>
+                    <th>Descripcion</th>
                 </tr>
             </thead>
             <tbody>

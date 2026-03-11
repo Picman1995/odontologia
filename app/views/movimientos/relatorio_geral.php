@@ -5,7 +5,7 @@ require_once __DIR__ . '/../layouts/header.php';
 
 <div class="container my-5">
     <div class="card bg-dark text-light p-4 rounded-4 shadow">
-        <h2 class="mb-4 text-center">Relatório Geral Financeiro por Período</h2>
+        <h2 class="mb-4 text-center">Informe Financiero General por Periodo</h2>
 
         <form method="GET" action="<?= BASE_URL ?>/lancamentos/relatorioGeral" class="row g-3 mb-4">
             <div class="col-md-5">
@@ -13,11 +13,11 @@ require_once __DIR__ . '/../layouts/header.php';
                 <input type="date" name="data_inicio" class="form-control bg-dark text-light border-secondary" value="<?= $_GET['data_inicio'] ?? '' ?>" required>
             </div>
             <div class="col-md-5">
-                <label class="form-label">Data Fim:</label>
+                <label class="form-label">Data Fin:</label>
                 <input type="date" name="data_fim" class="form-control bg-dark text-light border-secondary" value="<?= $_GET['data_fim'] ?? '' ?>" required>
             </div>
             <div class="col-md-2 d-flex align-items-end">
-                <button type="submit" class="btn btn-primary w-100">Gerar</button>
+                <button type="submit" class="btn btn-primary w-100">Generar</button>
             </div>
         </form>
 
@@ -29,9 +29,9 @@ require_once __DIR__ . '/../layouts/header.php';
                     <thead>
                         <tr>
                             <th>Paciente</th>
-                            <th>Total Créditos (R$)</th>
-                            <th>Total Débitos (R$)</th>
-                            <th>Saldo (R$)</th>
+                            <th>Total Créditos (Gs)</th>
+                            <th>Total Débitos (Gs)</th>
+                            <th>Saldo (Gs)</th>
                         </tr>
                     </thead>
                     <tbody>

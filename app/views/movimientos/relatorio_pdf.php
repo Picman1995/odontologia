@@ -120,14 +120,14 @@
         <h1>Relatório de Lançamentos</h1>
 
         <h5>Informações do Paciente</h5>
-        <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nome']) ?></p>
+        <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
         <p><strong>RG:</strong> <?= htmlspecialchars($paciente['rg']) ?></p>
         <p><strong>Data de Nascimento:</strong> <?= date('d/m/Y', strtotime($paciente['data_nascimento'])) ?></p>
         <p><strong>Sexo:</strong> <?= htmlspecialchars($paciente['sexo']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
-        <p><strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
-        <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?>, <?= htmlspecialchars($paciente['cidade']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, CEP: <?= htmlspecialchars($paciente['cep']) ?></p>
+        <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
+        <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?>, <?= htmlspecialchars($paciente['ciudades']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, CEP: <?= htmlspecialchars($paciente['cep']) ?></p>
         <p><strong>Cadastrado em:</strong> <?= date('d/m/Y H:i', strtotime($paciente['created_at'])) ?></p>
 
         <h5>Comunicados financieros</h5>
@@ -138,8 +138,8 @@
                     <th>Data</th>
                     <th>Tipo</th>
                     <th>Categoria</th>
-                    <th>Valor (R$)</th>
-                    <th>Descrição</th>
+                    <th>Valor (Gs)</th>
+                    <th>Descripcion</th>
                 </tr>
             </thead>
             <tbody>

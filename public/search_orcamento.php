@@ -9,7 +9,7 @@ $conn = $database->connect();
 if (isset($_GET['query'])) {
     $query = $_GET['query']; // Obtém a string de busca
 
-    // Preparar a consulta para encontrar pacientes que correspondem ao nome
+    // Preparar a consulta para encontrar pacientes que correspondem ao nombre
     $stmt = $conn->prepare("SELECT id_paciente, nombre FROM pacientes WHERE nombre LIKE :query LIMIT 5");
     $stmt->execute([':query' => '%' . $query . '%']);
     
@@ -27,9 +27,9 @@ if (isset($_GET['query'])) {
             $paciente = $stmtPaciente->fetch(PDO::FETCH_ASSOC);
             
             if ($paciente) {
-                // Criar um link para o paciente, passando o id e nome
+                // Criar um link para o paciente, passando o id e nombre
                 echo '<a href="javascript:void(0);" class="list-group-item list-group-item-action" onclick="selectPatient(' . $paciente['id_paciente'] . ', \'' . htmlspecialchars($paciente['nombre']) . '\')">';
-                echo htmlspecialchars($paciente['nombre']);  // Exibe o nome do paciente
+                echo htmlspecialchars($paciente['nombre']);  // Exibe o nombre do paciente
                 echo '</a>';
             }
         }

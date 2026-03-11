@@ -17,7 +17,7 @@ $agendamentoModel = new Agendamento();
         <?php foreach ($dentistas as $d): ?>
             <?php $especialidade = $agendamentoModel->getEspecialidadeNameById($d['especialidade_id'])?>
             <option value="<?= $d['id_dentista'] ?>">
-                <?= htmlspecialchars($d['nome']) ?> - <?= htmlspecialchars($especialidade) ?>
+                <?= htmlspecialchars($d['nombre']) ?> - <?= htmlspecialchars($especialidade) ?>
             </option>
         <?php endforeach; ?>
     </select>
@@ -35,7 +35,7 @@ $agendamentoModel = new Agendamento();
       </div>
       <div class="modal-body">
         <p><strong>Paciente:</strong> <span id="pacienteNome"></span></p>
-        <p><strong>Telefone:</strong> <span id="pacienteTelefone"></span></p>
+        <p><strong>Telefono:</strong> <span id="pacienteTelefone"></span></p>
         <p><strong>Email:</strong> <span id="pacienteEmail"></span></p>
         <hr>
         <p><strong>Dentista:</strong> <span id="pacienteDentista"></span></p>
@@ -43,7 +43,7 @@ $agendamentoModel = new Agendamento();
         <hr>
         <p><strong>Data/Hora:</strong> <span id="pacienteDataHora"></span></p>
         <hr>
-        <p><strong>Descrição:</strong><br><span id="pacienteDescricao"></span></p>
+        <p><strong>Descripcion:</strong><br><span id="pacienteDescricao"></span></p>
       </div>
 
     </div>

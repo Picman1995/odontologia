@@ -89,21 +89,21 @@
         <h1>Orçamento</h1>
 
         <h5>Informações do Paciente | <?= htmlspecialchars($numeroOrcamento) ?></h5>
-        <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nome']) ?></p>
+        <p><strong>Nome:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>Data de Nascimento:</strong> <?= date("d/m/Y", strtotime($paciente['data_nascimento'])) ?></p>
         <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
         <p><strong>RG:</strong> <?= htmlspecialchars($paciente['rg']) ?></p>
         <p><strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?></p>
-        <p><strong>Cidade:</strong> <?= htmlspecialchars($paciente['cidade']) ?></p>
+        <p><strong>Cidade:</strong> <?= htmlspecialchars($paciente['ciudades']) ?></p>
         <p><strong>Estado:</strong> <?= htmlspecialchars($paciente['estado']) ?></p>
         <p><strong>CEP:</strong> <?= htmlspecialchars($paciente['cep']) ?></p>
-        <p><strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
+        <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
 
         <h5>Informações do Dentista</h5>
-        <p><strong>Nome:</strong> <?= htmlspecialchars($dentista['nome']) ?></p>
+        <p><strong>Nome:</strong> <?= htmlspecialchars($dentista['nombre']) ?></p>
         <p><strong>Especialidade:</strong> <?= htmlspecialchars($especialidade) ?></p>
-        <p><strong>Telefone:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
+        <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
         <p><strong>CRO:</strong> <?= htmlspecialchars($dentista['cro']) ?></p>
 

@@ -12,7 +12,7 @@ require_once __DIR__ . '/../layouts/header.php';
             <h5 class="mb-3">Dados do Paciente</h5>
             <div class="row">
                 <div class="col-md-6 mb-2">
-                    <strong>Nome:</strong> <?= htmlspecialchars($paciente['nome']) ?>
+                    <strong>Nome:</strong> <?= htmlspecialchars($paciente['nombre']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
                     <strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?>
@@ -30,7 +30,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>Telefone:</strong> <?= htmlspecialchars($paciente['telefono']) ?>
+                    <strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
                     <strong>CEP:</strong> <?= htmlspecialchars($paciente['cep']) ?>
@@ -39,7 +39,7 @@ require_once __DIR__ . '/../layouts/header.php';
                     <strong>Endereço:</strong> <?= htmlspecialchars($paciente['endereco']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>Cidade:</strong> <?= htmlspecialchars($paciente['cidade']) ?>
+                    <strong>Cidade:</strong> <?= htmlspecialchars($paciente['ciudades']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
                     <strong>Estado:</strong> <?= htmlspecialchars($paciente['estado']) ?>
@@ -59,8 +59,8 @@ require_once __DIR__ . '/../layouts/header.php';
                         <th>Data</th>
                         <th>Tipo</th>
                         <th>Categoria</th>
-                        <th>Valor (R$)</th>
-                        <th>Descrição</th>
+                        <th>Valor (Gs)</th>
+                        <th>Descripcion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -90,7 +90,7 @@ require_once __DIR__ . '/../layouts/header.php';
         <!-- Botões -->
         <div class="text-center mt-4 d-flex flex-column flex-md-row justify-content-center gap-2">
             <a href="<?= BASE_URL ?>/lancamentos/relatorio/pdf/<?= $paciente['id_paciente'] ?>" class="btn btn-success px-4 shadow-sm" target="_blank">
-                <i class="bi bi-file-earmark-pdf"></i> Gerar PDF
+                <i class="bi bi-file-earmark-pdf"></i> Generar PDF
             </a>
             <a href="<?= BASE_URL ?>/lancamentos" class="btn btn-outline-light px-4 shadow-sm">
                 ← Voltar

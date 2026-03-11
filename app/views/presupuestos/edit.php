@@ -17,8 +17,8 @@ $orcamentoModel= new Orcamento();
             <input type="hidden" id="paciente_id" name="paciente_id" value="<?= $orcamento['paciente_id'] ?>">
             <input type="hidden" id="dentista_id" name="dentista_id" value="<?= $orcamento['dentista_id'] ?>">
             <div class="mb-4">
-                <p><strong>Paciente:</strong> <?= htmlspecialchars($pacienteInfo['nome']) ?></p>
-                <p><strong>Dentista:</strong> <?= htmlspecialchars($dentistaInfo['nome']) ?></p>
+                <p><strong>Paciente:</strong> <?= htmlspecialchars($pacienteInfo['nombre']) ?></p>
+                <p><strong>Dentista:</strong> <?= htmlspecialchars($dentistaInfo['nombre']) ?></p>
                 <p><strong>Nº Orçamento:</strong> <?= $orcamentoModel->gerarNumeroOrcamento($orcamento['id_orcamento']) ?></p>
                 <p><strong>Nº Anamnese:</strong> 
                     <?php 
@@ -30,12 +30,12 @@ $orcamentoModel= new Orcamento();
 
                 
                 <div class="mb-3">
-                    <label for="descricao_servico" class="form-label">Descrição do Serviço:</label>
+                    <label for="descricao_servico" class="form-label">Descripcion do Serviço:</label>
                     <textarea class="form-control" name="descricao_servico" id="descricao_servico" rows="4" required><?= htmlspecialchars($orcamento['descricao_servico']) ?></textarea>
                 </div>
 
                 <div class="mb-3">
-                    <label for="valor" class="form-label">Valor (R$):</label>
+                    <label for="valor" class="form-label">Valor (Gs):</label>
                     <input type="number" class="form-control" name="valor" id="valor" step="0.01" value="<?= htmlspecialchars($orcamento['valor']) ?>" required>
                 </div>
 
