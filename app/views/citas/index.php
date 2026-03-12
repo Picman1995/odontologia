@@ -68,7 +68,7 @@ $agendamentoModel = new Agendamento();
         $('#tabela-agendamentos').DataTable({
             "scrollX": true,
             language: {
-                url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"
+                url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
             }
         });
     });
