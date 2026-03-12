@@ -7,6 +7,8 @@ define('DB_USER', 'postgres');
 define('DB_PASS', '123456');
 define('SESSION_NAME', 'sistema_odontologico');
 
+
+
 // URL base: con servidor embebido use http://localhost:8000 (sin / al final)
 // Con Apache/XAMPP use http://localhost/odontologia/public
 define('BASE_URL', 'http://localhost:8000');
