@@ -35,7 +35,7 @@ class OrcamentoController {
         $especialidade = $this->orcamentoModel->getEspecialidadeNameById($dentista['especialidad_id'] ?? 0);
         $numeroOrcamento = $this->orcamentoModel->gerarNumeroOrcamento($id);
 
-        $dadosParaAssinar = $paciente['cpf'] . $dentista['cro'] . $orcamento['valor'] . $orcamento['fecha'];
+        $dadosParaAssinar = ($paciente['cpf'] ?? '') . $dentista['cro'] . $orcamento['valor'] . $orcamento['fecha'];
         $assinatura = hash('sha256', $dadosParaAssinar . SECRET_KEY);       
 
         if (!$orcamento || !$paciente || !$dentista) {

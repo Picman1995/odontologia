@@ -15,7 +15,7 @@ $agendamentoModel = new Agendamento();
     <select id="dentistaSelect" style="padding: 5px 10px; border-radius: 5px; background-color: #1e1e1e; color: #fff; border: 1px solid #555;">
         <option value="">Todos</option>
         <?php foreach ($dentistas as $d): ?>
-            <?php $especialidade = $agendamentoModel->getEspecialidadeNameById($d['especialidade_id'])?>
+            <?php $especialidade = $agendamentoModel->getEspecialidadeNameById((int)($d['especialidad_id'] ?? 0))?>
             <option value="<?= $d['id_dentista'] ?>">
                 <?= htmlspecialchars($d['nombre']) ?> - <?= htmlspecialchars($especialidade) ?>
             </option>

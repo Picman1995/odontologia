@@ -15,13 +15,10 @@ require_once __DIR__ . '/../layouts/header.php';
                     <strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?>
+                    <strong>Cédula:</strong> <?= htmlspecialchars((string)($paciente['cpf'] ?? '')) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>RG:</strong> <?= htmlspecialchars($paciente['rg']) ?>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <strong>Data de Nascimento:</strong> <?= date('d/m/Y', strtotime($paciente['data_nascimento'])) ?>
+                    <strong>Fecha de nacimiento:</strong> <?= !empty($paciente['fecha_nacimiento']) ? date('d/m/Y', strtotime($paciente['fecha_nacimiento'])) : '—' ?>
                 </div>
                 <div class="col-md-6 mb-2">
                     <strong>Sexo:</strong> <?= htmlspecialchars($paciente['sexo']) ?>
@@ -33,19 +30,13 @@ require_once __DIR__ . '/../layouts/header.php';
                     <strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>CEP:</strong> <?= htmlspecialchars($paciente['cep']) ?>
+                    <strong>Direccion:</strong> <?= htmlspecialchars((string)($paciente['direccion'] ?? '')) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>Direccion:</strong> <?= htmlspecialchars($paciente['endereco']) ?>
+                    <strong>Ciudad:</strong> <?= htmlspecialchars((string)($paciente['ciudad'] ?? '')) ?>
                 </div>
                 <div class="col-md-6 mb-2">
-                    <strong>Ciudad:</strong> <?= htmlspecialchars($paciente['ciudades']) ?>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <strong>Estado:</strong> <?= htmlspecialchars($paciente['estado']) ?>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <strong>Cadastrado em:</strong> <?= date('d/m/Y H:i', strtotime($paciente['created_at'])) ?>
+                    <strong>Registrado:</strong> <?= !empty($paciente['creado_en']) ? date('d/m/Y H:i', strtotime($paciente['creado_en'])) : '—' ?>
                 </div>
             </div>
         </div>
@@ -66,14 +57,14 @@ require_once __DIR__ . '/../layouts/header.php';
                 <tbody>
                     <?php foreach ($lanzamientos as $l): ?>
                         <tr>
-                            <td><?= $l['id_lancamento'] ?></td>
-                            <td><?= date('d/m/Y', strtotime($l['data_lancamento'])) ?></td>
-                            <td class="<?= $l['tipo'] === 'credito' ? 'text-success' : 'text-danger' ?>">
-                                <?= ucfirst($l['tipo']) ?>
+                            <td><?= htmlspecialchars((string)($l['id_movimiento'] ?? '')) ?></td>
+                            <td><?= !empty($l['fecha_movimiento']) ? date('d/m/Y', strtotime($l['fecha_movimiento'])) : '-' ?></td>
+                            <td class="<?= ($l['tipo'] ?? '') === 'credito' ? 'text-success' : 'text-danger' ?>">
+                                <?= ucfirst(htmlspecialchars((string)($l['tipo'] ?? ''))) ?>
                             </td>
-                            <td><?= ucfirst($l['categoria']) ?></td>
-                            <td>R$ <?= number_format($l['valor'], 2, ',', '.') ?></td>
-                            <td><?= nl2br(htmlspecialchars($l['descricao'])) ?></td>
+                            <td><?= ucfirst(htmlspecialchars((string)($l['categoria'] ?? ''))) ?></td>
+                            <td>R$ <?= number_format((float)($l['valor'] ?? 0), 2, ',', '.') ?></td>
+                            <td><?= nl2br(htmlspecialchars((string)($l['descripcion'] ?? ''))) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -89,10 +80,10 @@ require_once __DIR__ . '/../layouts/header.php';
 
         <!-- Botões -->
         <div class="text-center mt-4 d-flex flex-column flex-md-row justify-content-center gap-2">
-            <a href="<?= BASE_URL ?>/lanzamientos/relatorio/pdf/<?= $paciente['id_paciente'] ?>" class="btn btn-success px-4 shadow-sm" target="_blank">
+            <a href="<?= BASE_URL ?>/movimientos/relatorio/pdf/<?= $paciente['id_paciente'] ?>" class="btn btn-success px-4 shadow-sm" target="_blank">
                 <i class="bi bi-file-earmark-pdf"></i> Generar PDF
             </a>
-            <a href="<?= BASE_URL ?>/lanzamientos" class="btn btn-outline-light px-4 shadow-sm">
+            <a href="<?= BASE_URL ?>/movimientos" class="btn btn-outline-light px-4 shadow-sm">
                 ← Voltar
             </a>
         </div>

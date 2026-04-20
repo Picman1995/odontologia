@@ -86,7 +86,7 @@ class AnamneseController {
         $ano = date("Y", strtotime($anamnese['fecha']));
         $numeroAnamnese = $this->anamneseModel->gerarNumeroAnamnese($anamneseId, $ano);
 
-        $dadosParaAssinar = $paciente['cpf'] . $dentista['cro'] . $anamnese['descripcion'] . $anamnese['fecha'];
+        $dadosParaAssinar = ($paciente['cpf'] ?? '') . $dentista['cro'] . $anamnese['descripcion'] . $anamnese['fecha'];
         $assinatura = hash('sha256', $dadosParaAssinar . SECRET_KEY);   
 
         if (!$anamnese || !$paciente || !$dentista) {

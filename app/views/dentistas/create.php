@@ -16,12 +16,12 @@ $especialidadeName = $especialidadeModel->getAll();
             </div>
 
             <div class="mb-3">
-                <label for="especialidade_id" class="form-label">Especialidade:</label>
-                <select class="form-control" name="especialidade_id" id="especialidade_id">
-                <option value="">--SELECIONE--</option>
+                <label for="especialidad_id" class="form-label">Especialidad:</label>
+                <select class="form-control" name="especialidad_id" id="especialidad_id">
+                <option value="">— Seleccione —</option>
                     <?php foreach ($especialidadeName as $especialidade): ?>
-                        <option value="<?= htmlspecialchars($especialidade['id_especialidade']) ?>">
-                            <?= htmlspecialchars($especialidade['descricao']) ?>
+                        <option value="<?= htmlspecialchars((string)($especialidade['id_especialidad'] ?? '')) ?>">
+                            <?= htmlspecialchars((string)($especialidade['descripcion'] ?? '')) ?>
                         </option>                          
                     <?php endforeach; ?>    
                 </select>
@@ -38,13 +38,13 @@ $especialidadeName = $especialidadeModel->getAll();
             </div>
 
             <div class="mb-3">
-                <label for="endereco" class="form-label">Direccion:</label>
-                <input type="text" class="form-control" name="endereco" id="endereco" required>
+                <label for="direccion" class="form-label">Direccion:</label>
+                <input type="text" class="form-control" name="direccion" id="direccion" required>
             </div>
 
             <div class="mb-3">
-                <label for="ciudades" class="form-label">Ciudad:</label>
-                <input type="text" class="form-control" name="ciudades" id="ciudades" required>
+                <label for="ciudad" class="form-label">Ciudad:</label>
+                <input type="text" class="form-control" name="ciudad" id="ciudad" required>
             </div>
 
             <div class="mb-3">
@@ -84,4 +84,3 @@ $especialidadeName = $especialidadeModel->getAll();
 
 <?php 
 require_once __DIR__ . '/../layouts/footer.php';
-?>

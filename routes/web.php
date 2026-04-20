@@ -40,6 +40,14 @@ if ($uri === false || $uri === '') {
     $uri = '/';
 }
 
+// Rutas antiguas en portugués (/receitas/...) → mismas reglas que /recetas/...
+if (str_starts_with($uri, '/receitas')) {
+    $uri = '/recetas' . (strlen($uri) > 9 ? substr($uri, 9) : '');
+}
+if (str_starts_with($uri, '/lanzamientos')) {
+    $uri = '/movimientos' . (strlen($uri) > 13 ? substr($uri, 13) : '');
+}
+
 $method = $_SERVER['REQUEST_METHOD'];
 
 if ($uri == '/') {

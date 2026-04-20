@@ -26,12 +26,12 @@ class PacienteController {
                 'direccion' => $_POST['direccion'] ?? '',
                 'telefono' => $_POST['telefono'] ?? '',
                 'email' => $_POST['email'] ?? '',
-                'cep' => $_POST['cep'] ?? '',
-                'cpf' => $_POST['cpf'] ?? '',
-                'rg' => $_POST['rg'] ?? '',
+                'cep' => null,
+                'cpf' => trim((string) ($_POST['cpf'] ?? '')) !== '' ? trim((string) $_POST['cpf']) : null,
+                'rg' => null,
                 'sexo' => $_POST['sexo'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
-                'estado' => $_POST['estado'] ?? ''
+                'estado' => null,
             ];
             $this->pacienteModel->create($data);
             header('Location: '. BASE_URL .'/pacientes');
@@ -50,18 +50,24 @@ class PacienteController {
 
     public function update(int $id): void {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $current = $this->pacienteModel->find($id);
+            if (!$current) {
+                echo "Paciente no encontrado.";
+                return;
+            }
+            $cedula = trim((string) ($_POST['cpf'] ?? ''));
             $data = [
                 'nombre' => $_POST['nombre'] ?? '',
                 'fecha_nacimiento' => $_POST['fecha_nacimiento'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
                 'telefono' => $_POST['telefono'] ?? '',
                 'email' => $_POST['email'] ?? '',
-                'cep' => $_POST['cep'] ?? '',
-                'cpf' => $_POST['cpf'] ?? '',
-                'rg' => $_POST['rg'] ?? '',
+                'cep' => $current['cep'] ?? null,
+                'cpf' => $cedula !== '' ? $cedula : null,
+                'rg' => $current['rg'] ?? null,
                 'sexo' => $_POST['sexo'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
-                'estado' => $_POST['estado'] ?? ''
+                'estado' => $current['estado'] ?? null,
             ];
             $this->pacienteModel->update($id, $data);
             header('Location: '. BASE_URL .'/pacientes');

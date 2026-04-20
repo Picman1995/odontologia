@@ -165,7 +165,7 @@ class LancamentoController {
         foreach ($lanzamientos as $lancamento) {
             $dadosLancamentos .= $lancamento['id_movimiento'] . $lancamento['descripcion'] . $lancamento['valor'];
         }
-        $dadosParaAssinar = $paciente['nombre'] . $paciente['cpf'] . $paciente['rg'] . $dadosLancamentos;
+        $dadosParaAssinar = $paciente['nombre'] . ($paciente['cpf'] ?? '') . $dadosLancamentos;
     
         // Geração do hash SHA-256 com a SECRET_KEY definida no config
         $assinatura = hash('sha256', $dadosParaAssinar . SECRET_KEY);

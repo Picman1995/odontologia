@@ -36,8 +36,8 @@ class ReceitaController {
         $data = [
             'paciente_id' => $_POST['paciente_id'] ?? '',
             'dentista_id' => $_POST['dentista_id'] ?? '',
-            'fecha' => $_POST['fecha'] ?? '',
-            'contenido' => $_POST['contenido'] ?? ''
+            'fecha' => $_POST['fecha'] ?? $_POST['data'] ?? '',
+            'contenido' => $_POST['contenido'] ?? $_POST['conteudo'] ?? ''
         ];
         $this->receitaModel->create($data);
         header('Location: ' . BASE_URL . '/recetas');
@@ -54,8 +54,8 @@ class ReceitaController {
         $data = [
             'paciente_id' => $_POST['paciente_id'] ?? '',
             'dentista_id' => $_POST['dentista_id'] ?? '',
-            'fecha' => $_POST['fecha'] ?? '',
-            'contenido' => $_POST['contenido'] ?? ''
+            'fecha' => $_POST['fecha'] ?? $_POST['data'] ?? '',
+            'contenido' => $_POST['contenido'] ?? $_POST['conteudo'] ?? ''
         ];
         $this->receitaModel->update($id, $data);
         header('Location: ' . BASE_URL . '/recetas');
@@ -77,9 +77,9 @@ class ReceitaController {
         $receita = $this->receitaModel->find($id);
         $paciente = $this->pacienteModel->find($receita['paciente_id']);
         $dentista = $this->dentistaModel->find($receita['dentista_id']);
-        $especialidade = $this->dentistaModel->getEspecialidadeNameById($dentista['especialidade_id'] ?? 0);
+        $especialidade = $this->dentistaModel->getEspecialidadeNameById((int)($dentista['especialidad_id'] ?? 0));
     
-        $dadosParaAssinar = $paciente['cpf'] . $dentista['cro'] . $receita['id_receita'] . $receita['conteudo'];
+        $dadosParaAssinar = ($paciente['cpf'] ?? '') . $dentista['cro'] . $receita['id_receta'] . $receita['contenido'];
         $assinatura = hash('sha256', $dadosParaAssinar . SECRET_KEY);       
 
         if (!$receita || !$paciente || !$dentista) {
@@ -103,7 +103,7 @@ class ReceitaController {
             10 => 'outubro',11 => 'novembro',12 => 'dezembro'
         ];
 
-        $data = new DateTime($receita['data']); // ou use new DateTime() para hoje
+        $data = new DateTime($receita['fecha'] ?? 'now');
         $dia   = $data->format('d');
         $mes   = (int)$data->format('m');
         $ano   = $data->format('Y');      

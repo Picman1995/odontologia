@@ -8,7 +8,7 @@ $dentistaModel = new Dentista();
 <div class="container">
     <h2>Editar Receita</h2>
 
-    <form action="<?= BASE_URL ?>/receitas/update/<?= $receita['id_receita'] ?>" method="POST" class="form-container mt-4">
+    <form action="<?= BASE_URL ?>/recetas/update/<?= (int)($receita['id_receta'] ?? 0) ?>" method="POST" class="form-container mt-4">
 
         <div class="mb-3">
             <label for="paciente_id" class="form-label">Paciente</label>
@@ -29,7 +29,7 @@ $dentistaModel = new Dentista();
             <label for="dentista_id" class="form-label">Dentista</label>
             <select name="dentista_id" id="dentista_id" class="form-control" required>
                 <?php foreach ($dentistas as $d): ?>
-                    <?php $especialidade = $dentistaModel->getEspecialidadeNameById($d['especialidade_id']); ?>
+                    <?php $especialidade = $dentistaModel->getEspecialidadeNameById((int)($d['especialidad_id'] ?? 0)); ?>
                     <option value="<?= $d['id_dentista'] ?>" <?= $d['id_dentista'] == $receita['dentista_id'] ? 'selected' : '' ?>>
                         <?= htmlspecialchars($d['nombre']) ?> - <?= $especialidade ?>
                     </option>
@@ -39,16 +39,16 @@ $dentistaModel = new Dentista();
 
         <div class="mb-3">
             <label for="data" class="form-label">Data</label>
-            <input type="date" name="data" id="data" class="form-control" value="<?= $receita['data'] ?>" required>
+            <input type="date" name="fecha" id="fecha" class="form-control" value="<?= htmlspecialchars((string)($receita['fecha'] ?? '')) ?>" required>
         </div>
 
         <div class="mb-3">
             <label for="conteudo" class="form-label">Conteúdo da Receita</label>
-            <textarea name="conteudo" id="conteudo" rows="6" class="form-control" required><?= htmlspecialchars($receita['conteudo']) ?></textarea>
+            <textarea name="contenido" id="contenido" rows="6" class="form-control" required><?= htmlspecialchars((string)($receita['contenido'] ?? '')) ?></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Atualizar Receita</button>
-        <a href="<?= BASE_URL ?>/receitas" class="btn btn-secondary ms-2">Cancelar</a>
+        <a href="<?= BASE_URL ?>/recetas" class="btn btn-secondary ms-2">Cancelar</a>
     </form>
 </div>
 

@@ -121,14 +121,13 @@
 
         <h5>Informacciones do Paciente</h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
-        <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
-        <p><strong>RG:</strong> <?= htmlspecialchars($paciente['rg']) ?></p>
-        <p><strong>Data de Nascimento:</strong> <?= date('d/m/Y', strtotime($paciente['data_nascimento'])) ?></p>
+        <p><strong>Cédula:</strong> <?= htmlspecialchars((string)($paciente['cpf'] ?? '')) ?></p>
+        <p><strong>Fecha de nacimiento:</strong> <?= !empty($paciente['fecha_nacimiento']) ? date('d/m/Y', strtotime($paciente['fecha_nacimiento'])) : '—' ?></p>
         <p><strong>Sexo:</strong> <?= htmlspecialchars($paciente['sexo']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
-        <p><strong>Direccion:</strong> <?= htmlspecialchars($paciente['endereco']) ?>, <?= htmlspecialchars($paciente['ciudades']) ?> - <?= htmlspecialchars($paciente['estado']) ?>, CEP: <?= htmlspecialchars($paciente['cep']) ?></p>
-        <p><strong>Cadastrado em:</strong> <?= date('d/m/Y H:i', strtotime($paciente['created_at'])) ?></p>
+        <p><strong>Direccion:</strong> <?= htmlspecialchars((string)($paciente['direccion'] ?? '')) ?>, <?= htmlspecialchars((string)($paciente['ciudad'] ?? '')) ?></p>
+        <p><strong>Registrado:</strong> <?= !empty($paciente['creado_en']) ? date('d/m/Y H:i', strtotime($paciente['creado_en'])) : '—' ?></p>
 
         <h5>Comunicados financieros</h5>
         <table>
@@ -145,14 +144,14 @@
             <tbody>
                 <?php foreach ($lanzamientos as $l): ?>
                     <tr>
-                        <td style="text-align: center;"><?= $l['id_lancamento'] ?></td>
-                        <td style="text-align: center;"><?= date('d/m/Y', strtotime($l['data_lancamento'])) ?></td>
-                        <td style="text-align: center;" class="<?= $l['tipo'] === 'credito' ? 'text-success' : 'text-danger' ?>">
-                            <?= ucfirst($l['tipo']) ?>
+                        <td style="text-align: center;"><?= htmlspecialchars((string)($l['id_movimiento'] ?? '')) ?></td>
+                        <td style="text-align: center;"><?= !empty($l['fecha_movimiento']) ? date('d/m/Y', strtotime($l['fecha_movimiento'])) : '-' ?></td>
+                        <td style="text-align: center;" class="<?= ($l['tipo'] ?? '') === 'credito' ? 'text-success' : 'text-danger' ?>">
+                            <?= ucfirst(htmlspecialchars((string)($l['tipo'] ?? ''))) ?>
                         </td>
-                        <td style="text-align: center;"><?= ucfirst($l['categoria']) ?></td>
-                        <td style="text-align: right;">R$ <?= number_format($l['valor'], 2, ',', '.') ?></td>
-                        <td><?= nl2br(htmlspecialchars($l['descricao'])) ?></td>
+                        <td style="text-align: center;"><?= ucfirst(htmlspecialchars((string)($l['categoria'] ?? ''))) ?></td>
+                        <td style="text-align: right;">R$ <?= number_format((float)($l['valor'] ?? 0), 2, ',', '.') ?></td>
+                        <td><?= nl2br(htmlspecialchars((string)($l['descripcion'] ?? ''))) ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

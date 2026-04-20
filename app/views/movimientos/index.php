@@ -6,7 +6,7 @@ require_once __DIR__ . '/../layouts/header.php';
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Comunicados financieros</h1>
-        <a href="<?= BASE_URL ?>/lanzamientos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">+ Nuevo Lanzamiento</a>
+        <a href="<?= BASE_URL ?>/movimientos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">+ Nuevo movimiento</a>
     </div>
 
     <div class="table-responsive bg-dark p-3 rounded shadow-sm">
@@ -15,8 +15,8 @@ require_once __DIR__ . '/../layouts/header.php';
                 <tr>
                     <th>ID</th>
                     <th>Paciente</th>
-                    <th>Orçamento</th>
-                    <th>Data</th>
+                    <th>Presupuesto</th>
+                    <th>Fecha</th>
                     <th>Tipo</th>
                     <th>Categoria</th>
                     <th>Valor (Gs)</th>
@@ -27,31 +27,31 @@ require_once __DIR__ . '/../layouts/header.php';
             <tbody>
                 <?php foreach ($lanzamientos as $lanc): ?>
                     <tr>
-                        <td><?= $lanc['id_lancamento'] ?></td>
+                        <td><?= htmlspecialchars((string)($lanc['id_movimiento'] ?? '')) ?></td>
                         <td>
                             <?php
-                                $paciente = (new Paciente())->find($lanc['paciente_id']);
-                                echo htmlspecialchars($paciente['nombre'] ?? 'Desconhecido');
+                                $paciente = (new Paciente())->find((int)($lanc['paciente_id'] ?? 0));
+                                echo htmlspecialchars(is_array($paciente) ? ($paciente['nombre'] ?? 'Desconocido') : 'Desconocido');
                             ?>
                         </td>
-                        <td><?= $lanc['orcamento_id'] ? '#' . $lanc['orcamento_id'] : '-' ?></td>
-                        <td><?= date('d/m/Y', strtotime($lanc['data_lancamento'])) ?></td>
+                        <td><?= !empty($lanc['presupuesto_id']) ? '#' . htmlspecialchars((string)$lanc['presupuesto_id']) : '-' ?></td>
+                        <td><?= !empty($lanc['fecha_movimiento']) ? date('d/m/Y', strtotime($lanc['fecha_movimiento'])) : '-' ?></td>
                         <td>
-                            <span class="badge bg-<?= $lanc['tipo'] === 'credito' ? 'success' : 'danger' ?>">
-                                <?= ucfirst($lanc['tipo']) ?>
+                            <span class="badge bg-<?= ($lanc['tipo'] ?? '') === 'credito' ? 'success' : 'danger' ?>">
+                                <?= ucfirst(htmlspecialchars((string)($lanc['tipo'] ?? ''))) ?>
                             </span>
                         </td>
-                        <td><?= ucfirst($lanc['categoria']) ?></td>
-                        <td>R$ <?= number_format($lanc['valor'], 2, ',', '.') ?></td>
-                        <td><?= htmlspecialchars($lanc['descricao']) ?></td>
+                        <td><?= ucfirst(htmlspecialchars((string)($lanc['categoria'] ?? ''))) ?></td>
+                        <td>R$ <?= number_format((float)($lanc['valor'] ?? 0), 2, ',', '.') ?></td>
+                        <td><?= htmlspecialchars((string)($lanc['descripcion'] ?? '')) ?></td>
                         <td>
-                            <a href="<?= BASE_URL ?>/lanzamientos/edit/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">
+                            <a href="<?= BASE_URL ?>/movimientos/edit/<?= (int)($lanc['id_movimiento'] ?? 0) ?>" class="btn btn-sm btn-primary me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/lanzamientos/delete/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este Lanzamiento?')">
+                            <a href="<?= BASE_URL ?>/movimientos/delete/<?= (int)($lanc['id_movimiento'] ?? 0) ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este Lanzamiento?')">
                                 <i class="bi bi-trash3"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/lanzamientos/relatorio/<?= $lanc['id_lancamento'] ?>" class="btn btn-sm btn-secondary" title="Relatório">
+                            <a href="<?= BASE_URL ?>/movimientos/relatorio/<?= (int)($lanc['id_movimiento'] ?? 0) ?>" class="btn btn-sm btn-secondary" title="Relatório">
                                 <i class="bi bi-file-earmark-text"></i>
                             </a>
 
@@ -60,7 +60,15 @@ require_once __DIR__ . '/../layouts/header.php';
                 <?php endforeach; ?>
                 <?php if (empty($lanzamientos)): ?>
                     <tr>
-                        <td colspan="9">No se han registrado liberaciones.</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>No hay movimientos registrados.</td>
+                        <td>&mdash;</td>
                     </tr>
                 <?php endif; ?>
             </tbody>

@@ -19,7 +19,7 @@ $dentistaModel = new Dentista();
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Especialidade</th>
+                    <th>Especialidad</th>
                     <th>Telefono</th>
                     <th>Email</th>
                     <th>Direccion</th>
@@ -39,14 +39,14 @@ $dentistaModel = new Dentista();
                         <td><?= htmlspecialchars($dentista['nombre']) ?></td>
                         <td>
                             <?php
-                                $nomeEspecialidade = $dentistaModel->getEspecialidadeNameById($dentista['especialidade_id']);
+                                $nomeEspecialidade = $dentistaModel->getEspecialidadeNameById((int)($dentista['especialidad_id'] ?? 0));
                                 echo $nomeEspecialidade;
                             ?>
                         </td>
                         <td><?= htmlspecialchars($dentista['telefono']) ?></td>
                         <td><?= htmlspecialchars($dentista['email']) ?></td>
-                        <td><?= htmlspecialchars($dentista['endereco']) ?></td>
-                        <td><?= htmlspecialchars($dentista['ciudades']) ?></td>
+                        <td><?= htmlspecialchars((string)($dentista['direccion'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($dentista['ciudad'] ?? '')) ?></td>
                         <td><?= htmlspecialchars($dentista['estado']) ?></td>
                         <td><?= htmlspecialchars($dentista['cep']) ?></td>
                         <td><?= htmlspecialchars($dentista['rg']) ?></td>
@@ -66,7 +66,7 @@ $dentistaModel = new Dentista();
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div>d
+    </div>
     
     <div class="d-flex justify-content-end mt-3">
         <a href="<?= BASE_URL ?>/dashboard" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">

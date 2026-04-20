@@ -8,7 +8,7 @@ $dentistaModel = new Dentista();
 <div class="container">
     <h2>Nova Receita</h2>
 
-    <form action="<?= BASE_URL ?>/receitas/store" method="POST" class="form-container mt-4">
+    <form action="<?= BASE_URL ?>/recetas/store" method="POST" class="form-container mt-4">
 
         <div class="mb-3">
             <label for="paciente_id" class="form-label">Paciente</label>
@@ -22,7 +22,7 @@ $dentistaModel = new Dentista();
             <select name="dentista_id" id="dentista_id" class="form-control" required>
                 <option value="">Selecione um dentista</option>
                 <?php foreach ($dentistas as $d): ?>
-                    <?php $especialidade = $dentistaModel->getEspecialidadeNameById($d['especialidade_id']); ?>
+                    <?php $especialidade = $dentistaModel->getEspecialidadeNameById((int)($d['especialidad_id'] ?? 0)); ?>
                     <option value="<?= $d['id_dentista'] ?>"><?= htmlspecialchars($d['nombre']) ?> - <?= $especialidade ?></option>
                 <?php endforeach; ?>
             </select>
@@ -30,16 +30,16 @@ $dentistaModel = new Dentista();
 
         <div class="mb-3">
             <label for="data" class="form-label">Data</label>
-            <input type="date" name="data" id="data" class="form-control" value="<?= date('Y-m-d') ?>" required>
+            <input type="date" name="fecha" id="fecha" class="form-control" value="<?= date('Y-m-d') ?>" required>
         </div>
 
         <div class="mb-3">
             <label for="conteudo" class="form-label">Conteúdo da Receita</label>
-            <textarea name="conteudo" id="conteudo" rows="10" class="form-control" required></textarea>
+            <textarea name="contenido" id="contenido" rows="10" class="form-control" required></textarea>
         </div>
         <button type="submit" class="btn btn-custom w-100">Salvar</button>
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/receitas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+            <a href="<?= BASE_URL ?>/recetas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
         </div>
     </form>
     

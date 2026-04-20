@@ -14,13 +14,10 @@ require_once __DIR__ . '/../layouts/header.php';
 
         <h5 class="border-bottom pb-2 mb-3">Informacciones do Paciente - <?= $numeroAnamnese ?></h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
-        <p><strong>Data de Nascimento:</strong> <?= htmlspecialchars(date("d/m/Y", strtotime($paciente['data_nascimento']))) ?></p>
-        <p><strong>CPF:</strong> <?= htmlspecialchars($paciente['cpf']) ?></p>
-        <p><strong>RG:</strong> <?= htmlspecialchars($paciente['rg']) ?></p>
-        <p><strong>Direccion:</strong> <?= htmlspecialchars($paciente['endereco']) ?></p>
-        <p><strong>Ciudad:</strong> <?= htmlspecialchars($paciente['ciudades']) ?></p>
-        <p><strong>Estado:</strong> <?= htmlspecialchars($paciente['estado']) ?></p>
-        <p><strong>CEP:</strong> <?= htmlspecialchars($paciente['cep']) ?></p>
+        <p><strong>Fecha de nacimiento:</strong> <?= !empty($paciente['fecha_nacimiento']) ? htmlspecialchars(date("d/m/Y", strtotime($paciente['fecha_nacimiento']))) : '—' ?></p>
+        <p><strong>Cédula:</strong> <?= htmlspecialchars((string)($paciente['cpf'] ?? '')) ?></p>
+        <p><strong>Direccion:</strong> <?= htmlspecialchars((string)($paciente['direccion'] ?? '')) ?></p>
+        <p><strong>Ciudad:</strong> <?= htmlspecialchars((string)($paciente['ciudad'] ?? '')) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
 

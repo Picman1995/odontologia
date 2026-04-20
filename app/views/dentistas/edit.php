@@ -16,13 +16,13 @@ $especialidadeName = $especialidadeModel->getAll();
             </div>
 
             <div class="mb-3">
-                <label for="especialidade_id" class="form-label">Especialidade:</label>
-                <select class="form-control" name="especialidade_id" id="especialidade_id" required>
-                    <option value="">--SELECIONE--</option>
+                <label for="especialidad_id" class="form-label">Especialidad:</label>
+                <select class="form-control" name="especialidad_id" id="especialidad_id" required>
+                    <option value="">— Seleccione —</option>
                     <?php foreach ($especialidadeName as $especialidade): ?>
-                        <option value="<?= htmlspecialchars($especialidade['id_especialidade']) ?>"
-                            <?= $especialidade['id_especialidade'] == $dentista['especialidade_id'] ? 'selected' : '' ?>>
-                            <?= htmlspecialchars($especialidade['descricao']) ?>
+                        <option value="<?= htmlspecialchars((string)($especialidade['id_especialidad'] ?? '')) ?>"
+                            <?= (int)($especialidade['id_especialidad'] ?? 0) === (int)($dentista['especialidad_id'] ?? 0) ? 'selected' : '' ?>>
+                            <?= htmlspecialchars((string)($especialidade['descripcion'] ?? '')) ?>
                         </option>
                     <?php endforeach; ?>    
                 </select>
@@ -39,13 +39,13 @@ $especialidadeName = $especialidadeModel->getAll();
             </div>
 
             <div class="mb-3">
-                <label for="endereco" class="form-label">Direccion:</label>
-                <input type="text" class="form-control" name="endereco" id="endereco" value="<?= htmlspecialchars($dentista['endereco']) ?>" required>
+                <label for="direccion" class="form-label">Direccion:</label>
+                <input type="text" class="form-control" name="direccion" id="direccion" value="<?= htmlspecialchars((string)($dentista['direccion'] ?? '')) ?>" required>
             </div>
 
             <div class="mb-3">
-                <label for="ciudades" class="form-label">Ciudad:</label>
-                <input type="text" class="form-control" name="ciudades" id="ciudades" value="<?= htmlspecialchars($dentista['ciudades']) ?>" required>
+                <label for="ciudad" class="form-label">Ciudad:</label>
+                <input type="text" class="form-control" name="ciudad" id="ciudad" value="<?= htmlspecialchars((string)($dentista['ciudad'] ?? '')) ?>" required>
             </div>
 
             <div class="mb-3">
@@ -85,4 +85,3 @@ $especialidadeName = $especialidadeModel->getAll();
 
 <?php 
 require_once __DIR__ . '/../layouts/footer.php';
-?>

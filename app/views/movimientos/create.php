@@ -14,7 +14,7 @@ $orcamentoModel = new Orcamento();
     <h1 class="text-center mt-4">Registrar Pago/Transacción</h1>
 
     <div class="form-container">
-        <form method="POST" action="<?= BASE_URL ?>/lanzamientos/store">
+        <form method="POST" action="<?= BASE_URL ?>/movimientos/store">
             <div class="mb-3">
                 <label for="paciente_id" class="form-label">Paciente:</label>
                 
@@ -73,7 +73,7 @@ $orcamentoModel = new Orcamento();
         </form>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/lanzamientos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
+            <a href="<?= BASE_URL ?>/movimientos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
         </div>
     </div>
 </div>

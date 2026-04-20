@@ -181,7 +181,7 @@ window.addEventListener('load', function () {
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="cadastrosDropdown">
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/pacientes">Pacientes</a></li>
-                <li><a class="dropdown-item" href="<?= BASE_URL ?>/especialidades">Especialidade</a></li>
+                <li><a class="dropdown-item" href="<?= BASE_URL ?>/especialidades">Especialidades</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/dentistas">Dentistas</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/empleados">Empleados</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/anamnesis">Anamnesis</a></li>

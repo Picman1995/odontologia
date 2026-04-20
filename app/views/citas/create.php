@@ -26,7 +26,7 @@ $dentistaName = $dentistaModel->getAll();
                         <select class="form-control" name="dentista_id" id="dentista_id" required>
                                 <option value="">--Escolha um Dentista--</option>
                             <?php foreach ($dentistaName as $dentista): ?>
-                                <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>"><?= htmlspecialchars($dentista['nombre']) . " - " . $dentistaModel->getEspecialidadeNameById(htmlspecialchars($dentista['especialidade_id'])) ?></option>                          
+                                <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>"><?= htmlspecialchars($dentista['nombre']) . " - " . $dentistaModel->getEspecialidadeNameById((int)($dentista['especialidad_id'] ?? 0)) ?></option>                          
                             <?php endforeach; ?>    
                         </select>
                 </div>

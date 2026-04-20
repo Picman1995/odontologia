@@ -11,7 +11,6 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
         </div>
 
-    <!-- Tabela -->
     <div class="table-responsive bg-dark p-3 rounded shadow-sm">
         <table id="tabela-pacientes" class="table table-dark table-striped">
             <thead>
@@ -20,38 +19,31 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>Nombre</th>
                     <th>Nacimiento</th>
                     <th>Dirección</th>
-                    <th>CEP</th>
-                    <th>Telefono</th>
+                    <th>Teléfono</th>
                     <th>Email</th>
-                    <th>CPF</th>
-                    <th>RG</th>
+                    <th>Cédula</th>
                     <th>Sexo</th>
                     <th>Ciudad</th>
-                    <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($pacientes as $paciente): ?>
                     <tr>
-                        <td><?= htmlspecialchars($paciente['id_paciente']) ?></td>
-                        <td><?= htmlspecialchars($paciente['nombre']) ?></td>
-                        <td><?= htmlspecialchars(date("d/m/Y", strtotime($paciente['fecha_nacimiento']))) ?></td>
-                        <td><?= htmlspecialchars($paciente['direccion']) ?></td>
-                        <td><?= htmlspecialchars($paciente['cep']) ?></td>
-                        <td><?= htmlspecialchars($paciente['telefono']) ?></td>
-                        <td><?= htmlspecialchars($paciente['email']) ?></td>
-                        <td><?= htmlspecialchars($paciente['cpf']) ?></td>
-                        <td><?= htmlspecialchars($paciente['rg']) ?></td>
-                        <td><?= htmlspecialchars($paciente['sexo']) ?></td>
-                        <td><?= htmlspecialchars($paciente['ciudad']) ?></td>
-                        <td><?= htmlspecialchars($paciente['estado']) ?></td>
+                        <td><?= htmlspecialchars((string)($paciente['id_paciente'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($paciente['nombre'] ?? '')) ?></td>
+                        <td><?= !empty($paciente['fecha_nacimiento']) ? htmlspecialchars(date("d/m/Y", strtotime($paciente['fecha_nacimiento']))) : '—' ?></td>
+                        <td><?= htmlspecialchars((string)($paciente['direccion'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($paciente['telefono'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($paciente['email'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($paciente['cpf'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($paciente['sexo'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($paciente['ciudad'] ?? '')) ?></td>
                         <td>
-                                                                
-                            <a href="<?= BASE_URL ?>/pacientes/edit/<?= $paciente['id_paciente'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">
+                            <a href="<?= BASE_URL ?>/pacientes/edit/<?= (int)($paciente['id_paciente'] ?? 0) ?>" class="btn btn-sm btn-primary me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/pacientes/delete/<?= $paciente['id_paciente'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este orçamento?')">
+                            <a href="<?= BASE_URL ?>/pacientes/delete/<?= (int)($paciente['id_paciente'] ?? 0) ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este orçamento?')">
                                 <i class="bi bi-trash3"></i>
                             </a>
                         </td>
@@ -80,4 +72,3 @@ require_once __DIR__ . '/../layouts/header.php';
 
 <?php 
 require_once __DIR__ . '/../layouts/footer.php';
-?>

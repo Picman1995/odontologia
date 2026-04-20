@@ -10,6 +10,14 @@ class Paciente {
         $this->conn = $database->connect();
     }
 
+    private function nullableString(mixed $v): ?string {
+        if ($v === null || $v === false) {
+            return null;
+        }
+        $s = is_string($v) ? trim($v) : trim((string) $v);
+        return $s === '' ? null : $s;
+    }
+
     public function getAll(): array {
         $stmt = $this->conn->query("SELECT * FROM pacientes");
         return $stmt->fetchAll();
@@ -30,12 +38,12 @@ class Paciente {
             ':direccion' => $data['direccion'],
             ':telefono' => $data['telefono'],
             ':email' => $data['email'],
-            ':cep' => $data['cep'],
-            ':cpf' => $data['cpf'],
-            ':rg' => $data['rg'],
-            ':sexo' => $data['sexo'],
+            ':cep' => $this->nullableString($data['cep'] ?? null),
+            ':cpf' => $this->nullableString($data['cpf'] ?? null),
+            ':rg' => $this->nullableString($data['rg'] ?? null),
+            ':sexo' => $data['sexo'] ?: null,
             ':ciudad' => $data['ciudad'],
-            ':estado' => $data['estado']
+            ':estado' => $this->nullableString($data['estado'] ?? null),
         ]);
     }
 
@@ -66,13 +74,13 @@ class Paciente {
             ':direccion' => $data['direccion'],
             ':telefono' => $data['telefono'],
             ':email' => $data['email'],
-            ':cep' => $data['cep'],
-            ':cpf' => $data['cpf'],
-            ':rg' => $data['rg'],
-            ':sexo' => $data['sexo'],
+            ':cep' => $this->nullableString($data['cep'] ?? null),
+            ':cpf' => $this->nullableString($data['cpf'] ?? null),
+            ':rg' => $this->nullableString($data['rg'] ?? null),
+            ':sexo' => $data['sexo'] ?: null,
             ':ciudad' => $data['ciudad'],
-            ':estado' => $data['estado'],
-            ':id' => $id
+            ':estado' => $this->nullableString($data['estado'] ?? null),
+            ':id' => $id,
         ]);
     }
 

@@ -24,23 +24,13 @@ require_once __DIR__ . '/../layouts/header.php';
                     <option value="">Seleccione</option>
                     <option value="M">Masculino</option>
                     <option value="F">Femenino</option>
-                    <option value="Outro">Otro</option>
+                    <option value="Otro">Otro</option>
                 </select>
             </div>
 
             <div class="mb-3">
-                <label for="cpf" class="form-label">CPF:</label>
-                <input type="text" class="form-control" name="cpf" id="cpf" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="rg" class="form-label">RG:</label>
-                <input type="text" class="form-control" name="rg" id="rg" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="cep" class="form-label">CEP:</label>
-                <input type="text" class="form-control" name="cep" id="cep" required>
+                <label for="cpf" class="form-label">Cédula de identidad:</label>
+                <input type="text" class="form-control" name="cpf" id="cpf" maxlength="24" autocomplete="off">
             </div>
 
             <div class="mb-3">
@@ -51,11 +41,6 @@ require_once __DIR__ . '/../layouts/header.php';
             <div class="mb-3">
                 <label for="ciudad" class="form-label">Ciudad:</label>
                 <input type="text" class="form-control" name="ciudad" id="ciudad" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="estado" class="form-label">Estado (UF):</label>
-                <input type="text" class="form-control" name="estado" id="estado" maxlength="2" required>
             </div>
 
             <div class="mb-3">
@@ -80,4 +65,3 @@ require_once __DIR__ . '/../layouts/header.php';
 
 <?php 
 require_once __DIR__ . '/../layouts/footer.php';
-?>

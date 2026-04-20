@@ -17,7 +17,7 @@ $pacientes = $pacienteModel->getAll();
     <h1 class="text-center mt-4">Editar Pagamento / Lanzamiento</h1>
 
     <div class="form-container">
-        <form method="POST" action="<?= BASE_URL ?>/lanzamientos/update/<?= $lancamento['id_movimiento'] ?>">
+        <form method="POST" action="<?= BASE_URL ?>/movimientos/update/<?= $lancamento['id_movimiento'] ?>">
             <div class="mb-3">
                 <label for="paciente_id" class="form-label">Paciente:</label>
                     <?php foreach ($pacientes as $paciente): ?>
@@ -61,10 +61,10 @@ $pacientes = $pacienteModel->getAll();
             <div class="mb-3">
                 <label for="categoria" class="form-label">Categoria:</label>
                 <select class="form-control" name="categoria" id="categoria">
-                    <option value="recebimento" <?= $lancamento['categoria'] === 'recebimento' ? 'selected' : '' ?>>Recebimento</option>
-                    <option value="desconto" <?= $lancamento['categoria'] === 'desconto' ? 'selected' : '' ?>>Desconto</option>
-                    <option value="estorno" <?= $lancamento['categoria'] === 'estorno' ? 'selected' : '' ?>>Estorno</option>
-                    <option value="outros" <?= $lancamento['categoria'] === 'outros' ? 'selected' : '' ?>>Outros</option>
+                    <option value="cobro" <?= ($lancamento['categoria'] ?? '') === 'cobro' ? 'selected' : '' ?>>Cobro</option>
+                    <option value="descuento" <?= ($lancamento['categoria'] ?? '') === 'descuento' ? 'selected' : '' ?>>Descuento</option>
+                    <option value="reembolso" <?= ($lancamento['categoria'] ?? '') === 'reembolso' ? 'selected' : '' ?>>Reembolso</option>
+                    <option value="otros" <?= ($lancamento['categoria'] ?? '') === 'otros' ? 'selected' : '' ?>>Otros</option>
                 </select>
             </div>
 
@@ -82,7 +82,7 @@ $pacientes = $pacienteModel->getAll();
         </form>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/lanzamientos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
+            <a href="<?= BASE_URL ?>/movimientos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">← Volver a la lista</a>
         </div>
     </div>
 </div>
