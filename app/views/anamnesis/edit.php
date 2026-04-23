@@ -53,7 +53,7 @@ $dentistaName = $dentistaModel->getAll();
             </form>
 
             <div class="text-center mt-3">
-                <a href="<?= BASE_URL ?>/anamneses" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+                <a href="<?= BASE_URL ?>/anamneses" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">volver a la lista</a>
             </div>
         </div>
     </div>    

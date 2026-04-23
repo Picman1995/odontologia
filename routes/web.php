@@ -47,6 +47,20 @@ if (str_starts_with($uri, '/receitas')) {
 if (str_starts_with($uri, '/lanzamientos')) {
     $uri = '/movimientos' . (strlen($uri) > 13 ? substr($uri, 13) : '');
 }
+if (str_starts_with($uri, '/orcamentos')) {
+    $uri = '/presupuestos' . (strlen($uri) > 11 ? substr($uri, 11) : '');
+}
+if (str_starts_with($uri, '/agendamentos')) {
+    $uri = '/citas' . (strlen($uri) > 13 ? substr($uri, 13) : '');
+}
+// Alias: /empleados → /funcionarios (misma sección)
+if (str_starts_with($uri, '/empleados')) {
+    $uri = '/funcionarios' . (strlen($uri) > 10 ? substr($uri, 10) : '');
+}
+$uri = rtrim((string) $uri, '/');
+if ($uri === '') {
+    $uri = '/';
+}
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -98,18 +112,18 @@ elseif ($uri == '/dentistas') {
     $dentistaController->delete($matches[1]);
 }
 
-// Empleados
-elseif ($uri == '/empleados') {
+// Funcionarios (empleados)
+elseif ($uri == '/funcionarios') {
     $funcionarioController->index();
-} elseif ($uri == '/empleados/create') {
+} elseif ($uri == '/funcionarios/create') {
     $funcionarioController->create();
-} elseif ($uri == '/empleados/store' && $method == 'POST') {
+} elseif ($uri == '/funcionarios/store' && $method == 'POST') {
     $funcionarioController->store();
-} elseif (preg_match('/\/empleados\/edit\/(\d+)/', $uri, $matches)) {
+} elseif (preg_match('/\/funcionarios\/edit\/(\d+)/', $uri, $matches)) {
     $funcionarioController->edit($matches[1]);
-} elseif (preg_match('/\/empleados\/update\/(\d+)/', $uri, $matches) && $method == 'POST') {
+} elseif (preg_match('/\/funcionarios\/update\/(\d+)/', $uri, $matches) && $method == 'POST') {
     $funcionarioController->update($matches[1]);
-} elseif (preg_match('/\/empleados\/delete\/(\d+)/', $uri, $matches)) {
+} elseif (preg_match('/\/funcionarios\/delete\/(\d+)/', $uri, $matches)) {
     $funcionarioController->delete($matches[1]);
 }
 

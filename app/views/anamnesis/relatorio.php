@@ -26,7 +26,7 @@ require_once __DIR__ . '/../layouts/header.php';
         <p><strong>Especialidade:</strong> <?= htmlspecialchars($especialidade) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
-        <p><strong>CRO:</strong> <?= htmlspecialchars($dentista['cro']) ?></p>
+        <p><strong>Matrícula profesional:</strong> <?= htmlspecialchars((string)($dentista['matricula_profesional'] ?? '')) ?></p>
 
         <h5 class="border-bottom pb-2 mb-3 mt-4">Informacciones da Anamnese</h5>
         <p><?=  nl2br(htmlspecialchars($anamnese['descricao'])) ?></p>
@@ -36,7 +36,7 @@ require_once __DIR__ . '/../layouts/header.php';
             <a href="<?= BASE_URL ?>/anamneses/relatorio/pdf/<?= $anamnese['id_anamnese'] ?>" class="btn btn-sm btn-success" target="_blank">
                 <i class="bi bi-file-earmark-pdf"></i> Generar PDF
             </a>
-            <a href="<?= BASE_URL ?>/anamneses" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+            <a href="<?= BASE_URL ?>/anamneses" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">volver a la lista</a>
         </div>
     </div>
 </div>

@@ -31,7 +31,6 @@ class PacienteController {
                 'rg' => null,
                 'sexo' => $_POST['sexo'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
-                'estado' => null,
             ];
             $this->pacienteModel->create($data);
             header('Location: '. BASE_URL .'/pacientes');
@@ -67,7 +66,6 @@ class PacienteController {
                 'rg' => $current['rg'] ?? null,
                 'sexo' => $_POST['sexo'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
-                'estado' => $current['estado'] ?? null,
             ];
             $this->pacienteModel->update($id, $data);
             header('Location: '. BASE_URL .'/pacientes');

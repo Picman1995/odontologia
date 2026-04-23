@@ -183,7 +183,7 @@ window.addEventListener('load', function () {
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/pacientes">Pacientes</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/especialidades">Especialidades</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/dentistas">Dentistas</a></li>
-                <li><a class="dropdown-item" href="<?= BASE_URL ?>/empleados">Empleados</a></li>
+                <li><a class="dropdown-item" href="<?= BASE_URL ?>/funcionarios">Funcionarios</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/anamnesis">Anamnesis</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/presupuestos">Presupuestos</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/citas">Citas</a></li>

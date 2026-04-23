@@ -23,8 +23,8 @@ class AgendamentoController {
             $data = [
                 'paciente_id' => $_POST['paciente_id'] ?? '',
                 'dentista_id' => $_POST['dentista_id'] ?? '',
-                'fecha_hora' => $_POST['fecha_hora'] ?? '',
-                'descripcion' => $_POST['descripcion'] ?? ''
+                'fecha_hora' => $_POST['fecha_hora'] ?? $_POST['data_hora'] ?? '',
+                'descripcion' => $_POST['descripcion'] ?? $_POST['descricao'] ?? ''
             ];
             $this->agendamentoModel->create($data);
             header('Location: '. BASE_URL .'/citas');
@@ -46,8 +46,8 @@ class AgendamentoController {
             $data = [
                 'paciente_id' => $_POST['paciente_id'] ?? '',
                 'dentista_id' => $_POST['dentista_id'] ?? '',
-                'fecha_hora' => $_POST['fecha_hora'] ?? '',
-                'descripcion' => $_POST['descripcion'] ?? ''
+                'fecha_hora' => $_POST['fecha_hora'] ?? $_POST['data_hora'] ?? '',
+                'descripcion' => $_POST['descripcion'] ?? $_POST['descricao'] ?? ''
             ];
             $this->agendamentoModel->update($id, $data);
             header('Location: '. BASE_URL .'/citas');

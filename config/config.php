@@ -9,9 +9,10 @@ define('SESSION_NAME', 'sistema_odontologico');
 
 
 
-// URL base: con servidor embebido use http://localhost:8000 (sin / al final)
-// Con Apache/XAMPP use http://localhost/odontologia/public
-define('BASE_URL', 'http://localhost:8000');
+// URL base: debe incluir el esquema (https:// o http://) y sin barra final.
+// Sin https:// el navegador trata el host como ruta relativa y falla el redirect tras login.
+// Con Apache/XAMPP use p. ej. http://localhost/odontologia/public
+define('BASE_URL', 'https://fe4d-181-94-250-44.ngrok-free.app');
 
 define('BASE_PATH', '');
 define('SECRET_KEY', 'Hello World!!!'); 
@@ -20,4 +21,3 @@ define('NOME_CLINICA', 'CLÍNICA ODONTOLÓGICA');
 define('ENDERECO_CLINICA', 'Ruta departamental km 27'); 
 define('CIDADE_CLINICA', 'ITA'); 
 define('ESTADO_CLINICA', 'BA');
-define('CEP_CLINICA', '45430-000'); 

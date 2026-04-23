@@ -11,7 +11,6 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
         </div>
 
-    <!-- Tabela -->
     <div class="table-responsive bg-dark p-3 rounded shadow-sm">
         <table id="tabela-funcionarios" class="table table-dark table-striped">
             <thead>
@@ -19,39 +18,30 @@ require_once __DIR__ . '/../layouts/header.php';
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Cargo</th>
-                    <th>Telefono</th>
+                    <th>Teléfono</th>
                     <th>Email</th>
-                    <th>CPF</th>
-                    <th>RG</th>
                     <th>Sexo</th>
-                    <th>Direccion</th>
-                    <th>CEP</th>
+                    <th>Dirección</th>
                     <th>Ciudad</th>
-                    <th>Estado</th>
-                    <th>acciones</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($funcionarios as $funcionario): ?>
                     <tr>
-                        <td><?= htmlspecialchars($funcionario['id_funcionario']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['nombre']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['cargo']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['telefono']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['email']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['cpf']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['rg']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['sexo']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['endereco']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['cep']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['ciudades']) ?></td>
-                        <td><?= htmlspecialchars($funcionario['estado']) ?></td>
+                        <td><?= htmlspecialchars((string)($funcionario['id_empleado'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($funcionario['nombre'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($funcionario['puesto'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($funcionario['telefono'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($funcionario['email'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($funcionario['sexo'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($funcionario['direccion'] ?? '')) ?></td>
+                        <td><?= htmlspecialchars((string)($funcionario['ciudad'] ?? '')) ?></td>
                         <td>
-                                                                    
-                            <a href="<?= BASE_URL ?>/funcionarios/edit/<?= $funcionario['id_funcionario'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">
+                            <a href="<?= BASE_URL ?>/funcionarios/edit/<?= (int)($funcionario['id_empleado'] ?? 0) ?>" class="btn btn-sm btn-primary me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/funcionarios/delete/<?= $funcionario['id_funcionario'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este orçamento?')">
+                            <a href="<?= BASE_URL ?>/funcionarios/delete/<?= (int)($funcionario['id_empleado'] ?? 0) ?>" class="btn btn-sm btn-danger me-1" title="Eliminar" onclick="return confirm('¿Confirma eliminar este funcionario?')">
                                 <i class="bi bi-trash3"></i>
                             </a>
                         </td>

@@ -18,26 +18,22 @@ class Dentista {
     public function create(array $data): bool {
         $sql = "INSERT INTO dentistas (
                     nombre, especialidad_id, telefono, email,
-                    direccion, ciudad, estado, cep,
-                    rg, cpf, cro
+                    direccion, ciudad, matricula_profesional
                 ) VALUES (
                     :nombre, :especialidadId, :telefono, :email,
-                    :direccion, :ciudad, :estado, :cep,
-                    :rg, :cpf, :cro
+                    :direccion, :ciudad, :matricula_profesional
                 )";
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute([
             ':nombre' => $data['nombre'],
-            ':especialidadId' => $data['especialidad_id'],
+            ':especialidadId' => $data['especialidad_id'] !== '' ? $data['especialidad_id'] : null,
             ':telefono' => $data['telefono'],
             ':email' => $data['email'],
             ':direccion' => $data['direccion'],
             ':ciudad' => $data['ciudad'],
-            ':estado' => $data['estado'],
-            ':cep' => $data['cep'],
-            ':rg' => $data['rg'],
-            ':cpf' => $data['cpf'],
-            ':cro' => $data['cro']
+            ':matricula_profesional' => (($data['matricula_profesional'] ?? '') !== '')
+                ? $data['matricula_profesional']
+                : null,
         ]);
     }
 
@@ -55,25 +51,19 @@ class Dentista {
                     email = :email,
                     direccion = :direccion,
                     ciudad = :ciudad,
-                    estado = :estado,
-                    cep = :cep,
-                    rg = :rg,
-                    cpf = :cpf,
-                    cro = :cro
+                    matricula_profesional = :matricula_profesional
                 WHERE id_dentista = :id";
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute([
             ':nombre' => $data['nombre'],
-            ':especialidadId' => $data['especialidad_id'],
+            ':especialidadId' => $data['especialidad_id'] !== '' ? $data['especialidad_id'] : null,
             ':telefono' => $data['telefono'],
             ':email' => $data['email'],
             ':direccion' => $data['direccion'],
             ':ciudad' => $data['ciudad'],
-            ':estado' => $data['estado'],
-            ':cep' => $data['cep'],
-            ':rg' => $data['rg'],
-            ':cpf' => $data['cpf'],
-            ':cro' => $data['cro'],
+            ':matricula_profesional' => (($data['matricula_profesional'] ?? '') !== '')
+                ? $data['matricula_profesional']
+                : null,
             ':id' => $id
         ]);
     }

@@ -1,26 +1,26 @@
 <?php 
-$pageTitle = "Nova Receita";
+$pageTitle = "Nueva receta";
 require_once __DIR__ . '/../layouts/header.php'; 
 require_once __DIR__ . '/../../models/Dentista.php';
 $dentistaModel = new Dentista();
 ?>
 
 <div class="container">
-    <h2>Nova Receita</h2>
+    <h2>Nueva receta</h2>
 
     <form action="<?= BASE_URL ?>/recetas/store" method="POST" class="form-container mt-4">
 
         <div class="mb-3">
             <label for="paciente_id" class="form-label">Paciente</label>
-                <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()">
+                <input type="text" id="search" class="form-control" placeholder="Escriba el nombre..." onkeyup="searchData()">
                 <div id="suggestions" class="list-group mt-2"></div>
-                <input type="hidden" name="paciente_id" id="paciente_id"> <!-- Campo oculto para armazenar o id_paciente -->
+                <input type="hidden" name="paciente_id" id="paciente_id">
         </div>
 
         <div class="mb-3">
             <label for="dentista_id" class="form-label">Dentista</label>
             <select name="dentista_id" id="dentista_id" class="form-control" required>
-                <option value="">Selecione um dentista</option>
+                <option value="">Seleccione un dentista</option>
                 <?php foreach ($dentistas as $d): ?>
                     <?php $especialidade = $dentistaModel->getEspecialidadeNameById((int)($d['especialidad_id'] ?? 0)); ?>
                     <option value="<?= $d['id_dentista'] ?>"><?= htmlspecialchars($d['nombre']) ?> - <?= $especialidade ?></option>
@@ -29,50 +29,48 @@ $dentistaModel = new Dentista();
         </div>
 
         <div class="mb-3">
-            <label for="data" class="form-label">Data</label>
+            <label for="fecha" class="form-label">Fecha</label>
             <input type="date" name="fecha" id="fecha" class="form-control" value="<?= date('Y-m-d') ?>" required>
         </div>
 
         <div class="mb-3">
-            <label for="conteudo" class="form-label">Conteúdo da Receita</label>
+            <label for="contenido" class="form-label">Contenido de la receta</label>
             <textarea name="contenido" id="contenido" rows="10" class="form-control" required></textarea>
         </div>
-        <button type="submit" class="btn btn-custom w-100">Salvar</button>
+        <button type="submit" class="btn btn-custom w-100">Guardar</button>
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/recetas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+            <a href="<?= BASE_URL ?>/recetas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Volver a la lista</a>
         </div>
     </form>
     
 </div>
 
     <script>
-        // Função chamada a cada digitação no campo de texto
         function searchData() {
-            var query = $('#search').val(); // Obtém o valor digitado no campo de texto
+            var query = $('#search').val();
             
             if (query.length > 0) {
                 $.ajax({
-                    url: '<?= BASE_URL ?>/search.php', // Verifique se o caminho está correto
+                    url: '<?= BASE_URL ?>/search.php',
                     method: 'GET',
-                    data: { query: query }, // Envia a consulta de busca
+                    data: { query: query },
                     success: function(response) {
-                        $('#suggestions').html(response); // Exibe os resultados recebidos
+                        $('#suggestions').html(response);
                     },
                     error: function(xhr, status, error) {
-                        console.log('AJAX Error: ' + status + ' - ' + error); // Exibe o erro no console para depuração
-                        $('#suggestions').html('<p>Ocorreu um erro ao buscar os resultados. Tente novamente mais tarde.</p>'); // Exibe mensagem de erro para o usuário
+                        console.log('AJAX Error: ' + status + ' - ' + error);
+                        $('#suggestions').html('<p class="text-danger">No se pudieron cargar los resultados. Intente de nuevo.</p>');
                     }
                 });
             } else {
-                $('#suggestions').html(''); // Limpa as sugestões se o campo estiver vazio
+                $('#suggestions').html('');
             }
         }
 
-        // Função para selecionar um item da lista de sugestões
         function selectPatient(id, nombre) {
-            $('#search').val(nombre);  // Atualiza o valor do input com o nombre do paciente
-            $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
-            $('#suggestions').html(''); // Limpa as sugestões após a seleção
+            $('#search').val(nombre);
+            $('#paciente_id').val(id);
+            $('#suggestions').html('');
         }
     </script>
 

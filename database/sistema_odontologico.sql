@@ -30,7 +30,6 @@ CREATE TABLE pacientes (
   sexo sexo_enum DEFAULT NULL,
   fecha_nacimiento DATE DEFAULT NULL,
   ciudad VARCHAR(100) DEFAULT NULL,
-  estado VARCHAR(2) DEFAULT NULL,
   creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -45,11 +44,7 @@ CREATE TABLE dentistas (
   email VARCHAR(100) DEFAULT NULL,
   direccion VARCHAR(255) DEFAULT NULL,
   ciudad VARCHAR(100) DEFAULT NULL,
-  estado VARCHAR(2) DEFAULT NULL,
-  cep VARCHAR(10) DEFAULT NULL,
-  rg VARCHAR(20) DEFAULT NULL,
-  cpf VARCHAR(14) DEFAULT NULL,
-  cro VARCHAR(20) DEFAULT NULL
+  matricula_profesional VARCHAR(40) DEFAULT NULL
 );
 
 -- --------------------------------------------------------
@@ -62,12 +57,8 @@ CREATE TABLE empleados (
   telefono VARCHAR(20) DEFAULT NULL,
   email VARCHAR(100) DEFAULT NULL,
   direccion VARCHAR(255) DEFAULT NULL,
-  cep VARCHAR(10) DEFAULT NULL,
-  cpf VARCHAR(14) DEFAULT NULL,
-  rg VARCHAR(20) DEFAULT NULL,
   sexo sexo_enum DEFAULT NULL,
-  ciudad VARCHAR(100) DEFAULT NULL,
-  estado VARCHAR(2) DEFAULT NULL
+  ciudad VARCHAR(100) DEFAULT NULL
 );
 
 -- --------------------------------------------------------

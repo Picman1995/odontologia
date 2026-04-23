@@ -70,11 +70,11 @@ Histórico médico:
                     <input type="date" class="form-control" name="data" id="data" required>
                 </div>
 
-                <button type="submit" class="btn btn-custom w-100">Salvar</button>
+                <button type="submit" class="btn btn-custom w-100">Guardar</button>
             </form>
 
             <div class="text-center mt-3">
-                <a href="<?= BASE_URL ?>/anamneses" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+                <a href="<?= BASE_URL ?>/anamneses" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">volver a la lista</a>
             </div>
         </div>
     </div>

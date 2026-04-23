@@ -26,15 +26,11 @@ class FuncionarioController {
                 'telefono' => $_POST['telefono'] ?? '',
                 'email' => $_POST['email'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
-                'cep' => $_POST['cep'] ?? '',
-                'cpf' => $_POST['cpf'] ?? '',
-                'rg' => $_POST['rg'] ?? '',
                 'sexo' => $_POST['sexo'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
-                'estado' => $_POST['estado'] ?? ''
             ];
             $this->funcionarioModel->create($data);
-            header('Location: '. BASE_URL .'/empleados');
+            header('Location: '. BASE_URL .'/funcionarios');
             exit;
         }
     }
@@ -56,22 +52,18 @@ class FuncionarioController {
                 'telefono' => $_POST['telefono'] ?? '',
                 'email' => $_POST['email'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
-                'cep' => $_POST['cep'] ?? '',
-                'cpf' => $_POST['cpf'] ?? '',
-                'rg' => $_POST['rg'] ?? '',
                 'sexo' => $_POST['sexo'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
-                'estado' => $_POST['estado'] ?? ''
             ];
             $this->funcionarioModel->update($id, $data);
-            header('Location: '. BASE_URL .'/empleados');
+            header('Location: '. BASE_URL .'/funcionarios');
             exit;
         }
     }
 
     public function delete(int $id): void {
         $this->funcionarioModel->delete($id);
-        header('Location: '. BASE_URL .'/empleados');
+        header('Location: '. BASE_URL .'/funcionarios');
         exit;
     }
 }

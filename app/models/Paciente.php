@@ -26,10 +26,10 @@ class Paciente {
     public function create(array $data): bool {
         $sql = "INSERT INTO pacientes (
                     nombre, fecha_nacimiento, direccion, telefono, email,
-                    cep, cpf, rg, sexo, ciudad, estado
+                    cep, cpf, rg, sexo, ciudad
                 ) VALUES (
                     :nombre, :fechaNacimiento, :direccion, :telefono, :email,
-                    :cep, :cpf, :rg, :sexo, :ciudad, :estado
+                    :cep, :cpf, :rg, :sexo, :ciudad
                 )";
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute([
@@ -43,7 +43,6 @@ class Paciente {
             ':rg' => $this->nullableString($data['rg'] ?? null),
             ':sexo' => $data['sexo'] ?: null,
             ':ciudad' => $data['ciudad'],
-            ':estado' => $this->nullableString($data['estado'] ?? null),
         ]);
     }
 
@@ -64,8 +63,7 @@ class Paciente {
                     cpf = :cpf,
                     rg = :rg,
                     sexo = :sexo,
-                    ciudad = :ciudad,
-                    estado = :estado
+                    ciudad = :ciudad
                 WHERE id_paciente = :id";
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute([
@@ -79,7 +77,6 @@ class Paciente {
             ':rg' => $this->nullableString($data['rg'] ?? null),
             ':sexo' => $data['sexo'] ?: null,
             ':ciudad' => $data['ciudad'],
-            ':estado' => $this->nullableString($data['estado'] ?? null),
             ':id' => $id,
         ]);
     }

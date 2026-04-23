@@ -1,5 +1,5 @@
 <?php 
-$pageTitle = "Cadastrar Orçamento - Sistema Odontológico";
+$pageTitle = "Nuevo presupuesto";
 require_once __DIR__ . '/../layouts/header.php'; 
 $anamneseModel = new Anamnese();
 $anamneseName = $anamneseModel->getAll();
@@ -16,21 +16,21 @@ $dentistaName = $dentistaModel->getAll();
             </div>
         <?php endif; ?>
 
-        <h1 class="text-center mt-4">Cadastrar Nuevo Orçamento</h1>
+        <h1 class="text-center mt-4">Nuevo presupuesto</h1>
 
         <div class="form-container">
-            <form action="<?= BASE_URL ?>/orcamentos/store" method="POST">
+            <form action="<?= BASE_URL ?>/presupuestos/store" method="POST">
                 <div class="mb-3">
-                    <label for="paciente_id" class="form-label">Paciente:</label>
+                    <label for="paciente_id" class="form-label">Paciente</label>
                           
-                        <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()">
+                        <input type="text" id="search" class="form-control" placeholder="Escriba el nombre..." onkeyup="searchData()">
                         <div id="suggestions" class="list-group mt-2"></div>
-                        <input type="hidden" name="paciente_id" id="paciente_id"> <!-- Campo oculto para armazenar o id_paciente -->
+                        <input type="hidden" name="paciente_id" id="paciente_id">
                 </div>
                 <div class="mb-3">
-                    <label for="dentista_id" class="form-label">Dentista:</label>
+                    <label for="dentista_id" class="form-label">Dentista</label>
                         <select class="form-control" name="dentista_id" id="dentista_id" required>
-                                <option value="">--Escolha um Dentista--</option>
+                                <option value="">Seleccione un dentista</option>
                             <?php foreach ($dentistaName as $dentista): ?>
                                 <?php $nomeEspecialidade = $dentistaModel->getEspecialidadeNameById((int)($dentista['especialidad_id'] ?? 0)); ?>
                                 <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>"><?= htmlspecialchars($dentista['nombre']) ?> - <?= htmlspecialchars($nomeEspecialidade) ?></option>                          
@@ -38,57 +38,55 @@ $dentistaName = $dentistaModel->getAll();
                         </select>
                 </div>
                 <div class="mb-3">
-                    <label for="descricao_servico" class="form-label">Descripcion do Serviço:</label>
-                    <textarea class="form-control" name="descricao_servico" id="descricao_servico" rows="4" required></textarea>
+                    <label for="descripcion_servicio" class="form-label">Descripción del servicio</label>
+                    <textarea class="form-control" name="descripcion_servicio" id="descripcion_servicio" rows="4" required></textarea>
                 </div>
 
                 <div class="mb-3">
-                    <label for="valor" class="form-label">Valor (Gs):</label>
+                    <label for="valor" class="form-label">Valor (Gs.)</label>
                     <input type="number" class="form-control" name="valor" id="valor" step="0.01" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="data" class="form-label">Data:</label>
-                    <input type="date" class="form-control" name="data" id="data" required>
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" class="form-control" name="fecha" id="fecha" required>
                 </div>
 
-                <button type="submit" class="btn btn-custom w-100">Salvar</button>
+                <button type="submit" class="btn btn-custom w-100">Guardar</button>
             </form>
 
             <div class="text-center mt-3">
-                <a href="<?= BASE_URL ?>/orcamentos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+                <a href="<?= BASE_URL ?>/presupuestos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Volver a la lista</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Função chamada a cada digitação no campo de texto
         function searchData() {
-            var query = $('#search').val(); // Obtém o valor digitado no campo de texto
+            var query = $('#search').val();
             
             if (query.length > 0) {
                 $.ajax({
-                    url: '<?= BASE_URL ?>/search_orcamento.php', // Verifique se o caminho está correto
+                    url: '<?= BASE_URL ?>/search_orcamento.php',
                     method: 'GET',
-                    data: { query: query }, // Envia a consulta de busca
+                    data: { query: query },
                     success: function(response) {
-                        $('#suggestions').html(response); // Exibe os resultados recebidos
+                        $('#suggestions').html(response);
                     },
                     error: function(xhr, status, error) {
-                        console.log('AJAX Error: ' + status + ' - ' + error); // Exibe o erro no console para depuração
-                        $('#suggestions').html('<p>Ocorreu um erro ao buscar os resultados. Tente novamente mais tarde.</p>'); // Exibe mensagem de erro para o usuário
+                        console.log('AJAX Error: ' + status + ' - ' + error);
+                        $('#suggestions').html('<p class="text-danger">No se pudieron cargar los resultados.</p>');
                     }
                 });
             } else {
-                $('#suggestions').html(''); // Limpa as sugestões se o campo estiver vazio
+                $('#suggestions').html('');
             }
         }
 
-        // Função para selecionar um item da lista de sugestões
         function selectPatient(id, nombre) {
-            $('#search').val(nombre);  // Atualiza o valor do input com o nombre do paciente
-            $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
-            $('#suggestions').html(''); // Limpa as sugestões após a seleção
+            $('#search').val(nombre);
+            $('#paciente_id').val(id);
+            $('#suggestions').html('');
         }
     </script>
 <?php 

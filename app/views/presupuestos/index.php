@@ -1,17 +1,16 @@
 <?php 
-$pageTitle = "Lista de Orçamentos - Sistema Odontológico";
+$pageTitle = "Presupuestos";
 require_once __DIR__ . '/../layouts/header.php'; 
 $orcamentoModel = new Orcamento();
 ?>
 
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1>Presupuesto</h1>
+            <h1>Presupuestos</h1>
             <div class="d-flex gap-2">
-                <a href="<?= BASE_URL ?>/orcamentos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Nuevo Presupuesto</a>
+                <a href="<?= BASE_URL ?>/presupuestos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Nuevo presupuesto</a>
             </div>
         </div>
-    <!-- Tabela -->
     <div class="table-responsive bg-dark p-3 rounded shadow-sm">
         <table id="tabela-orcamentos" class="table table-dark table-striped">
             <thead>
@@ -21,14 +20,14 @@ $orcamentoModel = new Orcamento();
                     <th>Dentista</th>
                     <th>Servicio</th>
                     <th>Valor</th>
-                    <th>Dato</th>
+                    <th>Fecha</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($orcamentos as $orcamento): ?>
                     <tr>
-                        <td><?= htmlspecialchars(string: $orcamentoModel->gerarNumeroOrcamento($orcamento['id_orcamento'])) ?></td>
+                        <td><?= htmlspecialchars($orcamentoModel->gerarNumeroOrcamento((int)($orcamento['id_presupuesto'] ?? 0))) ?></td>
                         <td>
                         <?php 
                             $nomePaciente = $orcamentoModel->getPacienteNameById($orcamento['paciente_id']);
@@ -41,17 +40,17 @@ $orcamentoModel = new Orcamento();
                             echo htmlspecialchars($nomeDentista);
                         ?>
                         </td>
-                        <td><?= nl2br(htmlspecialchars($orcamento['descricao_servico'])) ?></td>
-                        <td>R$ <?= number_format($orcamento['valor'], 2, ',', '.') ?></td>
-                        <td><?= htmlspecialchars(date("d/m/Y", strtotime($orcamento['data']))) ?></td>
+                        <td><?= nl2br(htmlspecialchars((string)($orcamento['descripcion_servicio'] ?? ''))) ?></td>
+                        <td>Gs. <?= number_format((float)($orcamento['valor'] ?? 0), 2, ',', '.') ?></td>
+                        <td><?= htmlspecialchars(date("d/m/Y", strtotime((string)($orcamento['fecha'] ?? '')))) ?></td>
                         <td>
-                            <a href="<?= BASE_URL ?>/orcamentos/edit/<?= $orcamento['id_orcamento'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">
+                            <a href="<?= BASE_URL ?>/presupuestos/edit/<?= (int)($orcamento['id_presupuesto'] ?? 0) ?>" class="btn btn-sm btn-primary me-1" title="Editar">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/orcamentos/delete/<?= $orcamento['id_orcamento'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este orçamento?')">
+                            <a href="<?= BASE_URL ?>/presupuestos/delete/<?= (int)($orcamento['id_presupuesto'] ?? 0) ?>" class="btn btn-sm btn-danger me-1" title="Eliminar" onclick="return confirm('¿Eliminar este presupuesto?')">
                                 <i class="bi bi-trash3"></i>
                             </a>
-                            <a href="<?= BASE_URL ?>/orcamentos/relatorio/<?= $orcamento['id_orcamento'] ?>" class="btn btn-sm btn-secondary" title="Relatório">
+                            <a href="<?= BASE_URL ?>/presupuestos/relatorio/<?= (int)($orcamento['id_presupuesto'] ?? 0) ?>" class="btn btn-sm btn-secondary" title="Informe">
                                 <i class="bi bi-file-earmark-text"></i>
                             </a>
 

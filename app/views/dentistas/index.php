@@ -24,11 +24,7 @@ $dentistaModel = new Dentista();
                     <th>Email</th>
                     <th>Direccion</th>
                     <th>Ciudad</th>
-                    <th>Estado</th>
-                    <th>CEP</th>
-                    <th>RG</th>
-                    <th>CPF</th>
-                    <th>CRO</th>
+                    <th>Matrícula profesional</th>
                     <th>acciones</th>
                 </tr>
             </thead>
@@ -47,11 +43,7 @@ $dentistaModel = new Dentista();
                         <td><?= htmlspecialchars($dentista['email']) ?></td>
                         <td><?= htmlspecialchars((string)($dentista['direccion'] ?? '')) ?></td>
                         <td><?= htmlspecialchars((string)($dentista['ciudad'] ?? '')) ?></td>
-                        <td><?= htmlspecialchars($dentista['estado']) ?></td>
-                        <td><?= htmlspecialchars($dentista['cep']) ?></td>
-                        <td><?= htmlspecialchars($dentista['rg']) ?></td>
-                        <td><?= htmlspecialchars($dentista['cpf']) ?></td>
-                        <td><?= htmlspecialchars($dentista['cro']) ?></td>
+                        <td><?= htmlspecialchars((string)($dentista['matricula_profesional'] ?? '')) ?></td>
                         <td>
                                                                 
                             <a href="<?= BASE_URL ?>/dentistas/edit/<?= $dentista['id_dentista'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">

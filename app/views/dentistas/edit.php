@@ -49,35 +49,15 @@ $especialidadeName = $especialidadeModel->getAll();
             </div>
 
             <div class="mb-3">
-                <label for="estado" class="form-label">Estado:</label>
-                <input type="text" class="form-control" name="estado" id="estado" value="<?= htmlspecialchars($dentista['estado']) ?>" required>
+                <label for="matricula_profesional" class="form-label">Matrícula profesional:</label>
+                <input type="text" class="form-control" name="matricula_profesional" id="matricula_profesional" maxlength="40" value="<?= htmlspecialchars((string)($dentista['matricula_profesional'] ?? '')) ?>" placeholder="Opcional">
             </div>
 
-            <div class="mb-3">
-                <label for="cep" class="form-label">CEP:</label>
-                <input type="text" class="form-control" name="cep" id="cep" value="<?= htmlspecialchars($dentista['cep']) ?>" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="rg" class="form-label">RG:</label>
-                <input type="text" class="form-control" name="rg" id="rg" value="<?= htmlspecialchars($dentista['rg']) ?>" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="cpf" class="form-label">CPF:</label>
-                <input type="text" class="form-control" name="cpf" id="cpf" value="<?= htmlspecialchars($dentista['cpf']) ?>" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="cro" class="form-label">CRO:</label>
-                <input type="text" class="form-control" name="cro" id="cro" value="<?= htmlspecialchars($dentista['cro']) ?>" required>
-            </div>
-
-            <button type="submit" class="btn btn-custom w-100">Atualizar</button>
+            <button type="submit" class="btn btn-custom w-100">Guardar</button>
         </form>
 
         <div class="text-center mt-3">
-            <a href="<?= BASE_URL ?>/dentistas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+            <a href="<?= BASE_URL ?>/dentistas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">volver a la lista</a>
         </div>
     </div>
 </div>

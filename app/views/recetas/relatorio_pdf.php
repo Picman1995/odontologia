@@ -101,8 +101,8 @@
     <h1>Receituário</h1>
 
     <h5>Emitente</h5>
-    <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?> - <?= htmlspecialchars($dentista['cro']) ?></p>
-    <p><strong>Direccion:</strong> <?= htmlspecialchars((string)($dentista['direccion'] ?? '')) ?> - <?= htmlspecialchars((string)($dentista['ciudad'] ?? '')) ?>/<?= htmlspecialchars((string)($dentista['estado'] ?? '')) ?></p>
+    <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?><?php $mp = (string)($dentista['matricula_profesional'] ?? ''); ?><?= $mp !== '' ? ' — ' . htmlspecialchars($mp) : '' ?></p>
+    <p><strong>Direccion:</strong> <?= htmlspecialchars((string)($dentista['direccion'] ?? '')) ?><?php $c = (string)($dentista['ciudad'] ?? ''); ?><?= $c !== '' ? ' — ' . htmlspecialchars($c) : '' ?></p>
 
     <h5>Cidadão</h5>
     <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?> - <strong>Cédula:</strong> <?= htmlspecialchars((string)($paciente['cpf'] ?? '')) ?></p>
@@ -112,7 +112,7 @@
     <p><?= nl2br(htmlspecialchars((string)($receita['contenido'] ?? ''))) ?></p>
 
     <div class="assinatura">
-        <p><?= htmlspecialchars($dentista['nombre']) ?><br><?= htmlspecialchars($dentista['cro']) ?><br><?= htmlspecialchars((string)($paciente['ciudad'] ?? '')) ?>, <?php echo"$dia de {$meses[$mes]} de $ano" ?></p>
+        <p><?= htmlspecialchars($dentista['nombre']) ?><br><?= htmlspecialchars((string)($dentista['matricula_profesional'] ?? '')) ?><br><?= htmlspecialchars((string)($paciente['ciudad'] ?? '')) ?>, <?php echo"$dia de {$meses[$mes]} de $ano" ?></p>
     </div>
 
     <h5><strong>Assinado digitalmente.</strong></h5>

@@ -13,10 +13,9 @@ require_once __DIR__ . '/../layouts/header.php';
     <div class="form-container mt-4 p-4 rounded shadow-sm bg-dark text-light">
 
         <h5 class="border-bottom pb-2 mb-3">Emitente</h5>
-        <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?> (CRO: <?= htmlspecialchars($dentista['cro']) ?>)</p>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?> <?php $mp = (string)($dentista['matricula_profesional'] ?? ''); ?><?= $mp !== '' ? '(Matrícula profesional: ' . htmlspecialchars($mp) . ')' : '' ?></p>
         <p><strong>Direccion:</strong> <?= htmlspecialchars((string)($dentista['direccion'] ?? '')) ?></p>
         <p><strong>Ciudad:</strong> <?= htmlspecialchars((string)($dentista['ciudad'] ?? '')) ?></p>
-        <p><strong>Estado:</strong> <?= htmlspecialchars($dentista['estado']) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
 
@@ -35,7 +34,7 @@ require_once __DIR__ . '/../layouts/header.php';
             <a href="<?= BASE_URL ?>/recetas/relatorio/pdf/<?= (int)($receita['id_receta'] ?? 0) ?>" class="btn btn-sm btn-success" target="_blank">
                 <i class="bi bi-file-earmark-pdf"></i> Generar PDF
             </a>
-            <a href="<?= BASE_URL ?>/recetas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+            <a href="<?= BASE_URL ?>/recetas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">volver a la lista</a>
         </div>
     </div>
 </div>

@@ -35,7 +35,7 @@ class OrcamentoController {
         $especialidade = $this->orcamentoModel->getEspecialidadeNameById($dentista['especialidad_id'] ?? 0);
         $numeroOrcamento = $this->orcamentoModel->gerarNumeroOrcamento($id);
 
-        $dadosParaAssinar = ($paciente['cpf'] ?? '') . $dentista['cro'] . $orcamento['valor'] . $orcamento['fecha'];
+        $dadosParaAssinar = ($paciente['cpf'] ?? '') . ($dentista['matricula_profesional'] ?? '') . $orcamento['valor'] . $orcamento['fecha'];
         $assinatura = hash('sha256', $dadosParaAssinar . SECRET_KEY);       
 
         if (!$orcamento || !$paciente || !$dentista) {
@@ -80,9 +80,9 @@ class OrcamentoController {
             $data = [
                 'paciente_id' => $_POST['paciente_id'] ?? '',
                 'dentista_id' => $_POST['dentista_id'] ?? '',
-                'descripcion_servicio' => $_POST['descripcion_servicio'] ?? '',
+                'descripcion_servicio' => $_POST['descripcion_servicio'] ?? $_POST['descricao_servico'] ?? '',
                 'valor' => $_POST['valor'] ?? '',
-                'fecha' => $_POST['fecha'] ?? ''
+                'fecha' => $_POST['fecha'] ?? $_POST['data'] ?? ''
             ];
             $result = $this->orcamentoModel->create($data);
             if ($result === true) {
@@ -115,9 +115,9 @@ class OrcamentoController {
             $data = [
                 'paciente_id' => $_POST['paciente_id'] ?? '',
                 'dentista_id' => $_POST['dentista_id'] ?? '',
-                'descripcion_servicio' => $_POST['descripcion_servicio'] ?? '',
+                'descripcion_servicio' => $_POST['descripcion_servicio'] ?? $_POST['descricao_servico'] ?? '',
                 'valor' => $_POST['valor'] ?? '',
-                'fecha' => $_POST['fecha'] ?? ''
+                'fecha' => $_POST['fecha'] ?? $_POST['data'] ?? ''
             ];
             $this->orcamentoModel->update($id, $data);
             header('Location: ' . BASE_URL . '/presupuestos');

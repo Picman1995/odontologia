@@ -111,7 +111,7 @@
         <p><strong>Especialidade:</strong> <?= htmlspecialchars($especialidade) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
-        <p><strong>CRO:</strong> <?= htmlspecialchars($dentista['cro']) ?></p>
+        <p><strong>Matrícula profesional:</strong> <?= htmlspecialchars((string)($dentista['matricula_profesional'] ?? '')) ?></p>
 
         <h5>Informacciones da Anamnese</h5>
         <p><?= nl2br(htmlspecialchars($anamnese['descricao'])) ?></p>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Relatório de Orçamento</title>
+    <title>Presupuesto</title>
     <style>
         * {
             box-sizing: border-box;
@@ -18,7 +18,7 @@
         }
 
         header {
-            background-color: #f5f5f5; /* cinza claro */
+            background-color: #f5f5f5;
             padding: 10px 0;
             text-align: center;
         }
@@ -86,9 +86,9 @@
     </header>
 
     <main>
-        <h1>Orçamento</h1>
+        <h1>Presupuesto</h1>
 
-        <h5>Informacciones do Paciente | <?= htmlspecialchars($numeroOrcamento) ?></h5>
+        <h5>Datos del paciente | <?= htmlspecialchars($numeroOrcamento) ?></h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($paciente['nombre']) ?></p>
         <p><strong>Fecha de nacimiento:</strong> <?= !empty($paciente['fecha_nacimiento']) ? date("d/m/Y", strtotime($paciente['fecha_nacimiento'])) : '—' ?></p>
         <p><strong>Cédula:</strong> <?= htmlspecialchars((string)($paciente['cpf'] ?? '')) ?></p>
@@ -97,20 +97,20 @@
         <p><strong>Telefono:</strong> <?= htmlspecialchars($paciente['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($paciente['email']) ?></p>
 
-        <h5>Informacciones do Dentista</h5>
+        <h5>Datos del dentista</h5>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($dentista['nombre']) ?></p>
         <p><strong>Especialidade:</strong> <?= htmlspecialchars($especialidade) ?></p>
         <p><strong>Telefono:</strong> <?= htmlspecialchars($dentista['telefono']) ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($dentista['email']) ?></p>
-        <p><strong>CRO:</strong> <?= htmlspecialchars($dentista['cro']) ?></p>
+        <p><strong>Matrícula profesional:</strong> <?= htmlspecialchars((string)($dentista['matricula_profesional'] ?? '')) ?></p>
 
-        <h5>Informacciones do Orçamento</h5>
-        <p><strong>Serviço:</strong><br><?= nl2br(htmlspecialchars($orcamento['descricao_servico'])) ?></p>
-        <p><strong>Valor:</strong> R$ <?= number_format($orcamento['valor'], 2, ',', '.') ?></p>
-        <h5><strong>Data:</strong> <?= date("d/m/Y", strtotime($orcamento['data'])) ?></h5>
+        <h5>Detalle del presupuesto</h5>
+        <p><strong>Servicio:</strong><br><?= nl2br(htmlspecialchars((string)($orcamento['descripcion_servicio'] ?? ''))) ?></p>
+        <p><strong>Valor:</strong> Gs. <?= number_format((float)($orcamento['valor'] ?? 0), 2, ',', '.') ?></p>
+        <h5><strong>Fecha:</strong> <?= date("d/m/Y", strtotime((string)($orcamento['fecha'] ?? 'now'))) ?></h5>
 
-        <h5><strong>Assinado digitalmente.</strong></h5>
-        <p>Verifique em: <a href="<?= BASE_URL ?>/verificar/<?= $assinatura ?>"><?= BASE_URL ?>/verificar/<?= $assinatura ?></a></p>
+        <h5><strong>Firmado digitalmente.</strong></h5>
+        <p>Verificación: <a href="<?= BASE_URL ?>/verificar/<?= $assinatura ?>"><?= BASE_URL ?>/verificar/<?= $assinatura ?></a></p>
         <?= $assinaturaQrcode ?>
     </main>
 

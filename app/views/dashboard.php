@@ -62,16 +62,6 @@ $totalAgendamentos = $agendamentoModel->total();
                     <strong class="me-2">Ciudad:</strong> 
                     <span><?= htmlspecialchars(CIDADE_CLINICA) ?></span>
                 </div>
-                <div class="d-flex align-items-center mb-2">
-                    <i class="bi bi-globe-americas me-2"></i>
-                    <strong class="me-2">Estado:</strong> 
-                    <span><?= htmlspecialchars(ESTADO_CLINICA) ?></span>
-                </div>
-                <div class="d-flex align-items-center">
-                    <i class="bi bi-mailbox me-2"></i>
-                    <strong class="me-2">CEP:</strong> 
-                    <span><?= htmlspecialchars(CEP_CLINICA) ?></span>
-                </div>
             </div>
         </div>
 

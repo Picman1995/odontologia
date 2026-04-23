@@ -1,14 +1,14 @@
 <?php 
-$pageTitle = "Lista de Agendamientos - Sistema Odontológico";
+$pageTitle = "Citas";
 require_once __DIR__ . '/../layouts/header.php';
 $agendamentoModel = new Agendamento();
 ?>
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1>Agendamientos</h1>
+            <h1>Citas</h1>
             <div class="d-flex gap-2">
-                <a href="<?= BASE_URL ?>/agendamentos/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Nuevo Agendamiento</a>
-                <a href="<?= BASE_URL ?>/agendamentos/calendario" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Exibir Calendário</a>
+                <a href="<?= BASE_URL ?>/citas/create" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Nueva cita</a>
+                <a href="<?= BASE_URL ?>/citas/calendario" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Calendario</a>
             </div>
         </div>
         <div class="table-responsive bg-dark p-3 rounded shadow-sm">
@@ -18,15 +18,15 @@ $agendamentoModel = new Agendamento();
                     <th>ID</th>
                     <th>Paciente</th>
                     <th>Dentista</th>
-                    <th>Data e Hora</th>
-                    <th>Descripcion</th>
-                    <th>acciones</th>
+                    <th>Fecha y hora</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($agendamentos as $agendamento): ?>
                     <tr>
-                        <td><?= htmlspecialchars($agendamento['id_agendamento']) ?></td>
+                        <td><?= htmlspecialchars((string)($agendamento['id_cita'] ?? '')) ?></td>
                         <td>
                         <?php 
                             $nomePaciente = $agendamentoModel->getPacienteNameById($agendamento['paciente_id']);
@@ -39,14 +39,14 @@ $agendamentoModel = new Agendamento();
                             echo htmlspecialchars($nomeDentista);
                         ?>
                         </td>
-                        <td><?= htmlspecialchars(date("d/m/Y H:i", strtotime($agendamento['data_hora']))) ?></td>
-                        <td><?= nl2br(htmlspecialchars($agendamento['descricao'])) ?></td>
+                        <td><?= htmlspecialchars(date("d/m/Y H:i", strtotime($agendamento['fecha_hora'] ?? ''))) ?></td>
+                        <td><?= nl2br(htmlspecialchars((string)($agendamento['descripcion'] ?? ''))) ?></td>
                         <td>
 
-                        <a href="<?= BASE_URL ?>/agendamentos/edit/<?= $agendamento['id_agendamento'] ?>" class="btn btn-sm btn-primary me-1" title="Editar">
+                        <a href="<?= BASE_URL ?>/citas/edit/<?= (int)($agendamento['id_cita'] ?? 0) ?>" class="btn btn-sm btn-primary me-1" title="Editar">
                             <i class="bi bi-pencil-square"></i>
                         </a>
-                        <a href="<?= BASE_URL ?>/agendamentos/delete/<?= $agendamento['id_agendamento'] ?>" class="btn btn-sm btn-danger me-1" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir este orçamento?')">
+                        <a href="<?= BASE_URL ?>/citas/delete/<?= (int)($agendamento['id_cita'] ?? 0) ?>" class="btn btn-sm btn-danger me-1" title="Eliminar" onclick="return confirm('¿Eliminar esta cita?')">
                             <i class="bi bi-trash3"></i>
                         </a>
                         </td>

@@ -1,6 +1,5 @@
 <?php 
-require_once __DIR__ . '/../../../public/auth_middleware.php';
-$pageTitle = "Nuevo Agendamiento - Sistema Odontológico";
+$pageTitle = "Nueva cita";
 require_once __DIR__ . '/../layouts/header.php';
 $pacienteModel = new Paciente();
 $pacienteName = $pacienteModel->getAll();
@@ -8,23 +7,23 @@ $dentistaModel = new Dentista();
 $dentistaName = $dentistaModel->getAll();
 ?>
     <div class="container">
-        <h1 class="text-center mt-4">Nuevo Agendamiento</h1>
+        <h1 class="text-center mt-4">Nueva cita</h1>
 
         <div class="form-container">
-            <form action="<?= BASE_URL ?>/agendamentos/store" method="POST">
+            <form action="<?= BASE_URL ?>/citas/store" method="POST">
                 
                 <div class="mb-3">
-                    <label for="paciente_id" class="form-label">Paciente:</label>
-                        <input type="text" id="search" class="form-control" placeholder="Escribe el nombre..." onkeyup="searchData()">
+                    <label for="paciente_id" class="form-label">Paciente</label>
+                        <input type="text" id="search" class="form-control" placeholder="Escriba el nombre..." onkeyup="searchData()">
                         <div id="suggestions" class="list-group mt-2"></div>
-                        <input type="hidden" name="paciente_id" id="paciente_id"> <!-- Campo oculto para armazenar o id_paciente -->
+                        <input type="hidden" name="paciente_id" id="paciente_id">
                 </div>
 
                 
                 <div class="mb-3">
-                    <label for="dentista_id" class="form-label">Dentista:</label>
+                    <label for="dentista_id" class="form-label">Dentista</label>
                         <select class="form-control" name="dentista_id" id="dentista_id" required>
-                                <option value="">--Escolha um Dentista--</option>
+                                <option value="">Seleccione un dentista</option>
                             <?php foreach ($dentistaName as $dentista): ?>
                                 <option value="<?= htmlspecialchars($dentista['id_dentista']) ?>"><?= htmlspecialchars($dentista['nombre']) . " - " . $dentistaModel->getEspecialidadeNameById((int)($dentista['especialidad_id'] ?? 0)) ?></option>                          
                             <?php endforeach; ?>    
@@ -32,52 +31,50 @@ $dentistaName = $dentistaModel->getAll();
                 </div>
 
                 <div class="mb-3">
-                    <label for="data_hora" class="form-label">Data e Hora:</label>
-                    <input type="datetime-local" class="form-control" name="data_hora" id="data_hora" required>
+                    <label for="fecha_hora" class="form-label">Fecha y hora</label>
+                    <input type="datetime-local" class="form-control" name="fecha_hora" id="fecha_hora" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="descricao" class="form-label">Descripcion:</label>
-                    <textarea class="form-control" name="descricao" id="descricao" rows="4" required></textarea>
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" name="descripcion" id="descripcion" rows="4" required></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-custom w-100">Salvar</button>
+                <button type="submit" class="btn btn-custom w-100">Guardar</button>
             </form>
 
             <div class="text-center mt-3">
-                <a href="<?= BASE_URL ?>/agendamentos" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Voltar para lista</a>
+                <a href="<?= BASE_URL ?>/citas" class="btn btn-outline-light btn-sm rounded-1 px-4 shadow-sm">Volver a la lista</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Função chamada a cada digitação no campo de texto
         function searchData() {
-            var query = $('#search').val(); // Obtém o valor digitado no campo de texto
+            var query = $('#search').val();
             
             if (query.length > 0) {
                 $.ajax({
-                    url: '<?= BASE_URL ?>/search.php', // Verifique se o caminho está correto
+                    url: '<?= BASE_URL ?>/search.php',
                     method: 'GET',
-                    data: { query: query }, // Envia a consulta de busca
+                    data: { query: query },
                     success: function(response) {
-                        $('#suggestions').html(response); // Exibe os resultados recebidos
+                        $('#suggestions').html(response);
                     },
                     error: function(xhr, status, error) {
-                        console.log('AJAX Error: ' + status + ' - ' + error); // Exibe o erro no console para depuração
-                        $('#suggestions').html('<p>Ocorreu um erro ao buscar os resultados. Tente novamente mais tarde.</p>'); // Exibe mensagem de erro para o usuário
+                        console.log('AJAX Error: ' + status + ' - ' + error);
+                        $('#suggestions').html('<p class="text-danger">No se pudieron cargar los resultados.</p>');
                     }
                 });
             } else {
-                $('#suggestions').html(''); // Limpa as sugestões se o campo estiver vazio
+                $('#suggestions').html('');
             }
         }
 
-        // Função para selecionar um item da lista de sugestões
         function selectPatient(id, nombre) {
-            $('#search').val(nombre);  // Atualiza o valor do input com o nombre do paciente
-            $('#paciente_id').val(id);  // Atualiza o campo oculto com o id_paciente
-            $('#suggestions').html(''); // Limpa as sugestões após a seleção
+            $('#search').val(nombre);
+            $('#paciente_id').val(id);
+            $('#suggestions').html('');
         }
     </script>
 

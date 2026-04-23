@@ -79,7 +79,7 @@ class ReceitaController {
         $dentista = $this->dentistaModel->find($receita['dentista_id']);
         $especialidade = $this->dentistaModel->getEspecialidadeNameById((int)($dentista['especialidad_id'] ?? 0));
     
-        $dadosParaAssinar = ($paciente['cpf'] ?? '') . $dentista['cro'] . $receita['id_receta'] . $receita['contenido'];
+        $dadosParaAssinar = ($paciente['cpf'] ?? '') . ($dentista['matricula_profesional'] ?? '') . $receita['id_receta'] . $receita['contenido'];
         $assinatura = hash('sha256', $dadosParaAssinar . SECRET_KEY);       
 
         if (!$receita || !$paciente || !$dentista) {

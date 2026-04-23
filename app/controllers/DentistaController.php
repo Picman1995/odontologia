@@ -27,11 +27,7 @@ class DentistaController {
                 'email' => $_POST['email'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
-                'estado' => $_POST['estado'] ?? '',
-                'cep' => $_POST['cep'] ?? '',
-                'rg' => $_POST['rg'] ?? '',
-                'cpf' => $_POST['cpf'] ?? '',
-                'cro' => $_POST['cro'] ?? ''
+                'matricula_profesional' => trim((string)($_POST['matricula_profesional'] ?? '')),
             ];
             $this->dentistaModel->create($data);
             header('Location: ' . BASE_URL . '/dentistas');
@@ -57,11 +53,7 @@ class DentistaController {
                 'email' => $_POST['email'] ?? '',
                 'direccion' => $_POST['direccion'] ?? '',
                 'ciudad' => $_POST['ciudad'] ?? '',
-                'estado' => $_POST['estado'] ?? '',
-                'cep' => $_POST['cep'] ?? '',
-                'rg' => $_POST['rg'] ?? '',
-                'cpf' => $_POST['cpf'] ?? '',
-                'cro' => $_POST['cro'] ?? ''
+                'matricula_profesional' => trim((string)($_POST['matricula_profesional'] ?? '')),
             ];
             $this->dentistaModel->update($id, $data);
             header('Location: ' . BASE_URL . '/dentistas');

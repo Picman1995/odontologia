@@ -18,11 +18,11 @@ class Funcionario {
 
     public function create(array $data): bool {
         $sql = "INSERT INTO empleados (
-                    nombre, puesto, telefono, email, direccion, cep, cpf, rg,
-                    sexo, ciudad, estado
+                    nombre, puesto, telefono, email, direccion,
+                    sexo, ciudad
                 ) VALUES (
-                    :nombre, :puesto, :telefono, :email, :direccion, :cep, :cpf, :rg,
-                    :sexo, :ciudad, :estado
+                    :nombre, :puesto, :telefono, :email, :direccion,
+                    :sexo, :ciudad
                 )";
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute([
@@ -31,12 +31,8 @@ class Funcionario {
             ':telefono' => $data['telefono'],
             ':email' => $data['email'],
             ':direccion' => $data['direccion'],
-            ':cep' => $data['cep'],
-            ':cpf' => $data['cpf'],
-            ':rg' => $data['rg'],
-            ':sexo' => $data['sexo'],
+            ':sexo' => $data['sexo'] !== '' ? $data['sexo'] : null,
             ':ciudad' => $data['ciudad'],
-            ':estado' => $data['estado']
         ]);
     }
 
@@ -53,12 +49,8 @@ class Funcionario {
                     telefono = :telefono,
                     email = :email,
                     direccion = :direccion,
-                    cep = :cep,
-                    cpf = :cpf,
-                    rg = :rg,
                     sexo = :sexo,
-                    ciudad = :ciudad,
-                    estado = :estado
+                    ciudad = :ciudad
                 WHERE id_empleado = :id";
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute([
@@ -67,12 +59,8 @@ class Funcionario {
             ':telefono' => $data['telefono'],
             ':email' => $data['email'],
             ':direccion' => $data['direccion'],
-            ':cep' => $data['cep'],
-            ':cpf' => $data['cpf'],
-            ':rg' => $data['rg'],
-            ':sexo' => $data['sexo'],
+            ':sexo' => $data['sexo'] !== '' ? $data['sexo'] : null,
             ':ciudad' => $data['ciudad'],
-            ':estado' => $data['estado'],
             ':id' => $id
         ]);
     }
